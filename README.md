@@ -1,26 +1,26 @@
 # Itaiguara Bezerra
-### Economia | Econometria | Ciência de Dados | Análise Econômica
+### Economics | Econometrics | Data Science | Economic Analysis
 
 ---
 
-## 🏛️ Sobre
-Economista com expertise em modelagem econométrica e análise de dados, focado na identificação de regimes econômicos e dinâmica de séries temporais. Este espaço é dedicado à publicação de ativos técnicos, metodologias estocásticas e análise de risco estrutural.
+## 🏛️ About
+Economist with expertise in econometric modeling and data analysis, focused on identifying economic regimes and time series dynamics. This space is dedicated to the publication of technical assets, stochastic methodologies, and structural risk analysis.
 
 ---
 
-## 🛡️ Projetos e Pesquisas
-### [Análise de Regimes Econômicos no Brasil (Markov Switching)](./markov-chain-brazilian-gdp)
-Exame da inércia brasileira e datação de ciclos econômicos utilizando cadeias de Markov. 
+## 🛡️ Projects and Research
+### [Economic Regime Analysis in Brazil (Markov Switching)](./markov-chain-brazilian-gdp)
+An examination of Brazilian inertia and business cycle dating using Markov chains. 
 
 ---
 
-## 🥋 Portfólio Técnico
-* **Technical Appendix:** Cronologia dos Ciclos Econômicos (1996-2025)
-* **Modelagem:** Identificação de 3 Regimes (Em desenvolvimento)
-* **Crédito:** Modelos Híbridos de Inadimplência (ML + Econometria)
+## 🥋 Technical Portfolio
+* **Technical Appendix:** Business Cycle Chronology (1996-2025)
+* **Modeling:** Identification of 3 Regimes (In Development)
+* **Credit:** Hybrid Default Models (ML + Econometrics)
 
 ---
 
-## 🥋 Currículo e Contato
+## 🥋 Curriculum and Contact
 * [LinkedIn](https://www.linkedin.com/in/itaiguara-bezerra/)
-* [Currículo Completo](./curriculo)
+* [Full Curriculum](./curriculum)
