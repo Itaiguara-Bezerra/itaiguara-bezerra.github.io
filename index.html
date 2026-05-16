@@ -6,8 +6,7 @@
     <title>Itaiguara Bezerra | Senior Economist</title>
     
     <style>
-        /* 1. BLINDAGEM CONTRA O BUG DE TEXTO (Substituindo o seletor universal) */
-        html, body, nav, main, h1, p, a, div {
+        html, body, nav, main, h1, p, a, div, img {
             box-sizing: border-box;
         }
         
@@ -15,14 +14,14 @@
             margin: 0;
             padding: 0;
             background-color: #0a0a0c; /* Fundo escuro premium */
-            font-family: 'Times New Roman', Times, serif; /* Estética clássica */
+            font-family: 'Times New Roman', Times, serif;
             color: #ffffff;
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* 2. BARRA DE NAVEGAÇÃO LIMPA */
+        /* BARRA DE NAVEGAÇÃO LIMPA */
         .navbar {
             width: 100%;
             padding: 20px 40px;
@@ -40,10 +39,10 @@
             transition: color 0.3s;
         }
         .navbar a:hover {
-            color: #3182ce; /* Toque de azul no foco */
+            color: #3182ce;
         }
 
-        /* 3. CAPA CENTRALIZADA */
+        /* CAPA CENTRALIZADA */
         .capa-conteudo {
             flex: 1;
             display: flex;
@@ -54,24 +53,15 @@
             padding: 20px;
         }
 
-        /* MARCADOR DO BRASÃO (CSS Puro para evitar imagem quebrada) */
-        .logo-provisoria {
-            width: 180px;
-            height: 180px;
+        /* CONFIGURAÇÃO DO BRASÃO REAL */
+        .logo-real {
+            width: 180px; /* Tamanho ajustado e elegante */
+            height: auto;
             margin-bottom: 30px;
-            background: radial-gradient(circle, #1a202c 0%, #0a0a0c 100%);
-            border-radius: 50%;
-            border: 1px solid #2d3748;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4a5568;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            display: block;
         }
 
-        /* TÍTULOS E SUBTÍTULOS DE ELITE */
+        /* TÍTULOS E SUBTÍTULOS */
         h1 {
             font-size: 36px;
             font-weight: 400;
@@ -89,7 +79,7 @@
             text-transform: uppercase;
         }
 
-        /* BOTÃO CONVEXO */
+        /* BOTÃO */
         .botao-portfolio {
             border: 1px solid #3182ce;
             padding: 12px 28px;
@@ -117,7 +107,7 @@
     </nav>
 
     <main class="capa-conteudo">
-        <div class="logo-provisoria">Heraldic Crest</div>
+        <img src="logo.jfif" alt="Itaiguara Bezerra Crest" class="logo-real">
         
         <h1>Senior Economist | Data Economist</h1>
         
