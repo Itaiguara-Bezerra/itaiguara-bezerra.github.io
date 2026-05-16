@@ -14,6 +14,11 @@
             margin: 0;
             padding: 0;
             background-color: #0a0a0c; /* Fundo escuro premium */
+            /* TEXTURA DE FÓRMULAS/MATRIZ NO FUNDO (Efeito sutil de linhas de dados) */
+            background-image: 
+                linear-gradient(rgba(49, 130, 206, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(49, 130, 206, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
             font-family: 'Times New Roman', Times, serif;
             color: #ffffff;
             height: 100vh;
@@ -28,6 +33,7 @@
             display: flex;
             justify-content: flex-end;
             background-color: transparent;
+            z-index: 10;
         }
         .navbar a {
             color: #a0aec0;
@@ -42,31 +48,36 @@
             color: #3182ce;
         }
 
-        /* CAPA REESTRUTURADA (LADO A LADO) */
+        /* CAPA REESTRUTURADA (HORIZONTAL) */
         .capa-conteudo {
             flex: 1;
             display: flex;
-            flex-direction: row; /* Alinha a Logo na esquerda e o Texto na direita */
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             padding: 40px;
-            gap: 60px; /* Espaço elegante entre o brasão e o texto */
-            max-width: 1200px;
+            gap: 60px;
+            max-width: 1100px;
             margin: 0 auto;
+            z-index: 10;
         }
 
-        /* CONFIGURAÇÃO DO BRASÃO (MAIOR E IMPONENTE) */
+        /* AJUSTE CIRÚRGICO DA LOGO (FUSÃO DE FUNDO E ESCALA) */
         .logo-real {
-            width: 280px; /* Aumentado para dar o destaque correto */
+            width: 240px; /* Tamanho exato do layout validado */
             height: auto;
+            object-fit: contain;
             display: block;
+            /* Remove o fundo claro e integra a logo perfeitamente ao fundo escuro */
+            mix-blend-mode: multiply;
+            filter: brightness(1.15) contrast(1.1);
         }
 
         /* CAIXA DE TEXTO ALINHADA */
         .texto-capa {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Alinha os textos à esquerda do bloco */
+            align-items: flex-start;
             text-align: left;
         }
 
@@ -83,7 +94,7 @@
             font-size: 16px;
             color: #cbd5e0;
             letter-spacing: 2px;
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 0 40px 0;
             text-transform: uppercase;
             line-height: 1.6;
@@ -106,7 +117,7 @@
             box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
         }
 
-        /* RESPONSIVIDADE (Se abrir no celular, eles voltam a ficar um embaixo do outro para não amassar) */
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             .capa-conteudo {
                 flex-direction: column;
@@ -118,10 +129,10 @@
                 text-align: center;
             }
             .logo-real {
-                width: 200px;
+                width: 180px;
             }
             h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
         }
     </style>
