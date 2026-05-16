@@ -13,12 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0a0a0c; /* Fundo escuro premium */
-            /* TEXTURA DE FÓRMULAS/MATRIZ NO FUNDO (Efeito sutil de linhas de dados) */
-            background-image: 
-                linear-gradient(rgba(49, 130, 206, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(49, 130, 206, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #0a0a0c; /* Fundo preto escuro puro e sólido, sem grades */
             font-family: 'Times New Roman', Times, serif;
             color: #ffffff;
             height: 100vh;
@@ -33,7 +28,6 @@
             display: flex;
             justify-content: flex-end;
             background-color: transparent;
-            z-index: 10;
         }
         .navbar a {
             color: #a0aec0;
@@ -48,7 +42,7 @@
             color: #3182ce;
         }
 
-        /* CAPA REESTRUTURADA (HORIZONTAL) */
+        /* CAPA ALINHADA (HORIZONTAL) */
         .capa-conteudo {
             flex: 1;
             display: flex;
@@ -59,21 +53,21 @@
             gap: 60px;
             max-width: 1100px;
             margin: 0 auto;
-            z-index: 10;
         }
 
-        /* AJUSTE CIRÚRGICO DA LOGO (FUSÃO DE FUNDO E ESCALA) */
+        /* EMBUTIMENTO FORÇADO DA LOGO CORRETA */
         .logo-real {
-            width: 240px; /* Tamanho exato do layout validado */
+            width: 240px; /* Mantém a proporção exata e firme */
             height: auto;
             object-fit: contain;
             display: block;
-            /* Remove o fundo claro e integra a logo perfeitamente ao fundo escuro */
-            mix-blend-mode: multiply;
-            filter: brightness(1.15) contrast(1.1);
+            
+            /* Força a imagem a ignorar a barreira do fundo cinza claro */
+            mix-blend-mode: screen; 
+            filter: grayscale(1) invert(0) brightness(1.2) contrast(1.2);
         }
 
-        /* CAIXA DE TEXTO ALINHADA */
+        /* CAIXA DE TEXTO */
         .texto-capa {
             display: flex;
             flex-direction: column;
@@ -100,7 +94,7 @@
             line-height: 1.6;
         }
 
-        /* BOTÃO CONVEXO */
+        /* BOTÃO */
         .botao-portfolio {
             border: 1px solid #3182ce;
             padding: 12px 28px;
