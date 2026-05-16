@@ -42,28 +42,37 @@
             color: #3182ce;
         }
 
-        /* CAPA CENTRALIZADA */
+        /* CAPA REESTRUTURADA (LADO A LADO) */
         .capa-conteudo {
             flex: 1;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Alinha a Logo na esquerda e o Texto na direita */
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
+            padding: 40px;
+            gap: 60px; /* Espaço elegante entre o brasão e o texto */
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* CONFIGURAÇÃO DO BRASÃO REAL */
+        /* CONFIGURAÇÃO DO BRASÃO (MAIOR E IMPONENTE) */
         .logo-real {
-            width: 180px; /* Tamanho ajustado e elegante */
+            width: 280px; /* Aumentado para dar o destaque correto */
             height: auto;
-            margin-bottom: 30px;
             display: block;
+        }
+
+        /* CAIXA DE TEXTO ALINHADA */
+        .texto-capa {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinha os textos à esquerda do bloco */
+            text-align: left;
         }
 
         /* TÍTULOS E SUBTÍTULOS */
         h1 {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 400;
             letter-spacing: 4px;
             margin: 0 0 15px 0;
@@ -77,9 +86,10 @@
             max-width: 600px;
             margin: 0 0 40px 0;
             text-transform: uppercase;
+            line-height: 1.6;
         }
 
-        /* BOTÃO */
+        /* BOTÃO CONVEXO */
         .botao-portfolio {
             border: 1px solid #3182ce;
             padding: 12px 28px;
@@ -95,6 +105,25 @@
             background-color: rgba(49, 130, 206, 0.1);
             box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
         }
+
+        /* RESPONSIVIDADE (Se abrir no celular, eles voltam a ficar um embaixo do outro para não amassar) */
+        @media (max-width: 768px) {
+            .capa-conteudo {
+                flex-direction: column;
+                gap: 30px;
+                padding: 20px;
+            }
+            .texto-capa {
+                align-items: center;
+                text-align: center;
+            }
+            .logo-real {
+                width: 200px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -107,13 +136,15 @@
     </nav>
 
     <main class="capa-conteudo">
+        
         <img src="logo.jfif" alt="Itaiguara Bezerra Crest" class="logo-real">
         
-        <h1>Senior Economist | Data Economist</h1>
-        
-        <p>Synthesizing Economic Theory, Econometrics, and Data Science</p>
-        
-        <a href="#projects" class="botao-portfolio">View Selected Portfolio</a>
+        <div class="texto-capa">
+            <h1>Senior Economist | Data Economist</h1>
+            <p>Synthesizing Economic Theory, Econometrics, and Data Science</p>
+            <a href="#projects" class="botao-portfolio">View Selected Portfolio</a>
+        </div>
+
     </main>
 
 </body>
