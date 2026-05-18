@@ -1,16 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itaiguara Bezerra | Senior Economist | Data Economist</title>
+    
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            
+            /* Puxa o seu fundo definitivo */
+            background-image: url('background.jpg');
+            
+            /* Regras para travar a imagem e cobrir a tela inteira */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            
+            /* Cor de segurança caso a internet oscile */
+            background-color: #0b0f12; 
+            
+            /* Fonte padrão limpa para o site */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Estilo do Menu Superior Direito (Navbar) */
+        .navbar {
+            position: absolute;
+            top: 30px;
+            right: 8%;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-left: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #c5a880; /* Tom bronze sutil ao passar o mouse */
+        }
+
+        /* Container que joga sua identidade para a esquerda */
+        .container-esquerda {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            max-width: 45%;
+            z-index: 10;
+        }
+
+        .nome-autor {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 0.5rem 0;
+            color: #ffffff;
+        }
+
+        .cargos-autor {
+            font-size: 1.25rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #c5a880; /* Tom bronze/dourado sutil para os cargos */
+            margin-bottom: 2.5rem;
+        }
+
+        .botao-portfolio {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .botao-portfolio:hover {
+            background-color: #ffffff;
+            color: #0b0f12;
+            cursor: pointer;
+        }
+    </style>
+</head>
 <body>
 
-    <div class="container-esquerda">
-        <h1 class="nome-autor">Itaiguara Bezerra</h1>
-        <div class="cargos-autor">Senior Economist | Data Economist</div>
-        <a href="#projects" class="botao-portfolio">[View Detailed Portfolio]</a>
-    </div>
-
-</body>
     <nav class="navbar">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -18,17 +110,11 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <main class="capa-conteudo">
-        
-        <img src="logo.jfif" alt="Itaiguara Bezerra Crest" class="logo-real">
-        
-        <div class="texto-capa">
-            <h1>Senior Economist | Data Economist</h1>
-            <p>Synthesizing Economic Theory, Econometrics, and Data Science</p>
-            <a href="#projects" class="botao-portfolio">View Selected Portfolio</a>
-        </div>
-
-    </main>
+    <div class="container-esquerda">
+        <h1 class="nome-autor">Itaiguara Bezerra</h1>
+        <div class="cargos-autor">Senior Economist | Data Economist</div>
+        <a href="#projects" class="botao-portfolio">[View Detailed Portfolio]</a>
+    </div>
 
 </body>
 </html>
