@@ -9,16 +9,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0f12; /* Fundo escuro integrado com a capa */
+            background-color: #0b0f12 !important; /* TRAVADO: Força o fundo escuro da capa */
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Menu superior da página de currículo */
         .navbar-resume {
+            position: relative;
             padding: 30px 8% 0 0;
             text-align: right;
+            z-index: 100;
         }
 
         .navbar-resume a {
@@ -32,14 +33,33 @@
             transition: color 0.3s ease;
         }
 
-        .navbar-resume a:hover {
+        .navbar-resume a:hover, .navbar-resume a.active {
             color: #c5a880;
         }
 
         .resume-container {
             max-width: 1050px;
             margin: 0 auto;
-            padding: 60px 20px 100px 20px;
+            padding: 40px 20px 100px 20px;
+        }
+
+        /* Botão Voltar Discreto */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: #c5a880;
         }
 
         .cabecalho-curriculo {
@@ -151,12 +171,19 @@
 <body>
 
     <nav class="navbar-resume">
-        <a href="index.html">Home / Cover</a>
-        <a href="resume.html" style="color: #c5a880;">Resume</a>
+        <a href="index.html">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="index.html#contact">Contact</a>
     </nav>
 
     <div class="resume-container">
         
+        <a href="index.html" class="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back
+        </a>
+
         <div class="cabecalho-curriculo">
             <div>
                 <h1 style="margin: 0; font-size: 2.3rem; font-weight: 700; color: #e0e0e0; letter-spacing: -0.5px;">Itaiguara Bezerra</h1>
