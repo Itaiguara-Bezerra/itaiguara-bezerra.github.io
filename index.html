@@ -9,13 +9,13 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0f12; /* Cor de segurança no fundo geral */
+            background-color: #0b0f12; /* Fundo de segurança */
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* NOVA SEÇÃO: Envelopa a Capa para ocupar a tela inteira isolada */
+        /* Seção de abertura: Capa isolada ocupando a tela inteira */
         .secao-capa {
             position: relative;
             min-height: 100vh;
@@ -26,10 +26,10 @@
             background-position: center center;
             background-attachment: fixed;
             display: flex;
-            align-items: center; /* Centraliza verticalmente o conteúdo da esquerda */
+            align-items: center;
         }
 
-        /* Estilo do Menu Superior Direito (Navbar) */
+        /* Menu Superior Direito (Navbar) */
         .navbar {
             position: absolute;
             top: 30px;
@@ -49,10 +49,10 @@
         }
 
         .navbar a:hover {
-            color: #c5a880; /* Tom bronze sutil ao passar o mouse */
+            color: #c5a880; /* Bronze sutil */
         }
 
-        /* Container da sua identidade */
+        /* Alinhamento da Identidade na Esquerda */
         .container-esquerda {
             padding-left: 8%;
             max-width: 60%; 
@@ -104,7 +104,8 @@
         <nav class="navbar">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#curriculo">Resume</a> <a href="#contact">Contact</a>
+            <a href="#curriculo">Resume</a>
+            <a href="#contact">Contact</a>
         </nav>
 
         <div class="container-esquerda">
@@ -115,7 +116,7 @@
     </header>
 
     <section id="curriculo" style="padding: 80px 20px; background-color: #ffffff; color: #333333; line-height: 1.6;">
-        <div style="max-width: 900px; margin: 0 auto;">
+        <div style="max-width: 950px; margin: 0 auto;">
             
             <div style="border-bottom: 2px solid #111; padding-bottom: 20px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
                 <div>
@@ -125,45 +126,60 @@
                 <a href="#" style="padding: 10px 20px; background-color: #111; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 4px;">Baixar Versão PDF (LaTeX)</a>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px;">
                 
                 <div>
-                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Experiência Profissional</h2>
+                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Experiência Profissional</h2>
                     
-                    <div style="margin-bottom: 30px;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="margin-bottom: 35px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
                             <h3 style="margin: 0; font-size: 1.15rem; font-weight: 600; color: #111;">Analista de Relatórios Econômicos</h3>
-                            <span style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; background-color: #f3f4f6; padding: 2px 6px; border-radius: 3px;">2024 - Presente</span>
+                            <span style="font-size: 0.82rem; color: #666; font-weight: 600; text-transform: uppercase; background-color: #f3f4f6; padding: 2px 6px; border-radius: 3px; white-space: nowrap;">2024 - Presente</span>
                         </div>
-                        <p style="margin: 2px 0 5px 0; font-size: 0.95rem; color: #555; font-weight: 500;">SEBRAE (Contratos de Consultoria de Conjuntura)</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #444; text-align: justify;">Responsável pela elaboration técnica de relatórios econômicos conjunturais regionais. Desenvolvimento e automação de tabelas descritivas, análise de indicadores agregados econômicos e tratamento de dados para suporte a tomadas de decisão institucionais.</p>
+                        <p style="margin: 2px 0 8px 0; font-size: 0.95rem; color: #555; font-weight: 500; font-style: italic;">SEBRAE (Contratos de Consultoria de Conjuntura)</p>
+                        <p style="margin: 0; font-size: 0.9rem; color: #444; text-align: justify;">
+                            Atuação direta no desenvolvimento e na estruturação técnica de relatórios de conjuntura econômica regional de alta relevância. Responsável pelo tratamento estatístico e consolidação de matrizes de dados macroeconômicos aplicados, com foco na elaboração de tabelas descritivas complexas e na modelagem de gráficos de desempenho para o Índice de Confiança das Micro e Pequenas Empresas (IC-MPE). Tradução de dados brutos e séries temporais em diagnósticos analíticos claros e antifrágeis para o suporte à tomada de decisões estratégicas institucionais.
+                        </p>
                     </div>
 
-                    <div style="margin-bottom: 30px;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="margin-bottom: 35px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
                             <h3 style="margin: 0; font-size: 1.15rem; font-weight: 600; color: #111;">Docência de Ensino Superior</h3>
-                            <span style="font-size: 0.85rem; color: #666; font-weight: 500;">2014 - 2017</span>
+                            <span style="font-size: 0.82rem; color: #666; font-weight: 500; background-color: #f3f4f6; padding: 2px 6px; border-radius: 3px; white-space: nowrap;">2014 - 2017</span>
                         </div>
-                        <p style="margin: 2px 0 5px 0; font-size: 0.95rem; color: #555; font-weight: 500;">UNIGRANRIO</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #444; text-align: justify;">Atuação na preparação de apostilas de acompanhamento didático, handouts instrucionais e condução de aulas na área econômica, focando na transmissão de conceitos de economia e finanças para formação acadêmica.</p>
+                        <p style="margin: 2px 0 8px 0; font-size: 0.95rem; color: #555; font-weight: 500; font-style: italic;">UNIGRANRIO</p>
+                        <p style="margin: 0; font-size: 0.9rem; color: #444; text-align: justify;">
+                            Atuação no ambiente de formação acadêmica superior, sendo diretamente responsável pelo planejamento de cursos e pela regência de classes na área econômica e financeira. Destaque para o desenvolvimento autoral de apostilas de acompanhamento didático aprofundadas, handouts instrucionais e materiais de apoio quantitativo voltados para a simplificação e transmissão rigorosa de conceitos fundamentais de macroeconomia, finanças corporativas e dinâmica de mercados.
+                        </p>
                     </div>
                 </div>
 
                 <div>
-                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Formação Acadêmica</h2>
+                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Formação Acadêmica</h2>
                     
-                    <div style="margin-bottom: 30px;">
+                    <div style="margin-bottom: 35px;">
                         <h3 style="margin: 0; font-size: 1.15rem; font-weight: 600; color: #111;">Bacharelado em Ciências Econômicas</h3>
-                        <p style="margin: 2px 0 0 0; font-size: 0.95rem; color: #555; font-weight: 500;">Universidade Federal do Rio de Janeiro (UFRJ)</p>
-                        <p style="margin: 2px 0 0 0; font-size: 0.9rem; color: #777;">Instituto de Economia - Praia Vermelha</p>
+                        <p style="margin: 2px 0 2px 0; font-size: 0.95rem; color: #555; font-weight: 500;">Universidade Federal do Rio de Janeiro (UFRJ)</p>
+                        <p style="margin: 0; font-size: 0.9rem; color: #777; font-weight: 500;">Instituto de Economia — Praia Vermelha</p>
                     </div>
 
-                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 40px;">Competências Técnicas</h2>
+                    <h2 style="font-size: 1.3rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 35px;">Competências Técnicas & Projetos</h2>
                     
                     <div style="font-size: 0.9rem; color: #444;">
-                        <p style="margin: 0 0 12px 0;"><strong style="color: #111;">Análise Científica de Dados:</strong> Modelagem quantitativa em Python, engenharia de atributos estrutural (Feature Engineering), tratamento de séries temporais e aplicação de algoritmos não-lineares (XGBoost) com foco em interpretabilidade econômica (SHAP Values).</p>
-                        <p style="margin: 0 0 12px 0;"><strong style="color: #111;">Econometria Aplicada:</strong> Estruturação de modelos de mudança de regime por Cadeias de Markov (Markov-Switching) e estudos de vetores econômicos (VECM).</p>
-                        <p style="margin: 0;"><strong style="color: #111;">Visualização de Dados:</strong> Desenvolvimento de gráficos minimalistas de alta performance (Matplotlib / Seaborn), focando na eliminação de ruídos visuais para comunicação executiva e institucional.</p>
+                        <p style="margin: 0 0 16px 0; text-align: justify;">
+                            <strong style="color: #111; display: block; margin-bottom: 3px; font-size: 0.95rem;">Análise Científica de Dados (Python):</strong> 
+                            Construção de pipelines completos de modelagem estatística orientada a dados no VS Code. Domínio em Engenharia de Atributos Estrutural (Feature Engineering) para tratamento e filtragem de séries temporais não-estacionárias. Aplicação avançada de algoritmos de Machine Learning não-lineares (XGBoost Regressor e Classificador) aplicados à previsão de agregados macroeconômicos e análise de crédito, blindados metodologicamente através de técnicas de interpretabilidade matemática via SHAP Values.
+                        </p>
+                        
+                        <p style="margin: 0 0 16px 0; text-align: justify;">
+                            <strong style="color: #111; display: block; margin-bottom: 3px; font-size: 0.95rem;">Econometria Aplicada de Fronteira:</strong> 
+                            Modelagem e estimação de estruturas estocásticas complexas com quebra estrutural e mudança de regime endógena por Cadeias de Markov (Markov-Switching / Modelos MSIAH no statsmodels). Desenvolvimento e diagnóstico de modelos de Vetores com Correção de Erros (VECM) aplicados à análise de dinâmicas de equilíbrio de longo prazo e Formação Bruta de Capital Fixo (FBCF).
+                        </p>
+                        
+                        <p style="margin: 0; text-align: justify;">
+                            <strong style="color: #111; display: block; margin-bottom: 3px; font-size: 0.95rem;">Visualização Avançada e Análise Estrutural:</strong> 
+                            Desenvolvimento de mapas de regiões de decisão não-lineares e superfícies tridimensionais limpas via Matplotlib e Seaborn, focando no design minimalista executivo e na eliminação total de ruídos visuais. Condução de exercícios estruturais de alta complexidade empírica baseados em literatura clássica (James Hamilton, Sims, Stock e Watson), com projetos publicados integrando a identificação endógena de clusters por K-Means (Método do Cotovelo) com validação de fronteiras inerciais do PIB.
+                        </p>
                     </div>
                 </div>
 
