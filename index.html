@@ -12,13 +12,13 @@
         }
 
         body, html {
-            background-color: #0b151e;
+            height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            scroll-behavior: smooth;
+            background-color: #0b151e;
+            overflow-x: hidden;
         }
 
-        /* Hero Section (A capa espetacular com imagem cheia) */
+        /* Container da Landing Page com a imagem de fundo cheia */
         .hero-viewport {
             width: 100%;
             height: 100vh;
@@ -32,7 +32,7 @@
             padding: 0 8%;
         }
 
-        /* Menu Superior de Navegação */
+        /* Menu Superior de Navegação Dinâmica */
         nav {
             position: absolute;
             top: 40px;
@@ -61,8 +61,10 @@
             opacity: 0.4;
         }
 
+        /* Bloco de Conteúdo Principal (Alinhado à Esquerda) */
         .content-block {
             max-width: 750px;
+            color: #ffffff;
             z-index: 2;
         }
 
@@ -85,97 +87,6 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
 
-        /* Secção do Portfólio (Abaixo da Dobra) */
-        .portfolio-section {
-            padding: 80px 8%;
-            background-color: #0b0f12; /* Mesma cor sólida do resume.html */
-        }
-
-        .portfolio-section h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #e0e0e0;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #c5a880;
-            padding-bottom: 10px;
-            max-width: 1050px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .projects-grid {
-            max-width: 1050px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        /* Cards Estilo Quant/Hedge Fund */
-        .project-card {
-            background-color: #131a22;
-            border: 1px solid #232e3c;
-            border-radius: 6px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            border-color: #c5a880;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .project-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-
-        .project-tech {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #c5a880;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
-        }
-
-        .project-desc {
-            font-size: 0.92rem;
-            color: #b3b3b3;
-            text-align: justify;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .btn-code {
-            align-self: flex-start;
-            padding: 8px 16px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background-color: transparent;
-            border: 1px solid #475569;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-code:hover {
-            border-color: #ffffff;
-            background-color: #ffffff;
-            color: #0b0f12;
-        }
-
         @media (max-width: 768px) {
             nav {
                 top: 20px;
@@ -183,10 +94,15 @@
                 font-size: 0.8rem;
                 gap: 8px;
             }
-            .hero-viewport { padding: 0 5%; }
-            .content-block h1 { font-size: 2.5rem; }
-            .content-block h2 { font-size: 1.1rem; }
-            .portfolio-section { padding: 50px 5%; }
+            .hero-viewport {
+                padding: 0 5%;
+            }
+            .content-block h1 {
+                font-size: 2.5rem;
+            }
+            .content-block h2 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -195,9 +111,9 @@
     <div class="hero-viewport">
         <nav>
             <a href="index.html">HOME</a> <span>|</span>
-            <a href="resume.html">ABOUT</a> <span>|</span>
-            <a href="#projects">PROJECTS</a> <span>|</span>
-            <a href="resume.html">RESUME</a> <span>|</span>
+            <a href="resume.html" target="_blank">ABOUT</a> <span>|</span>
+            <a href="projects.html" target="_blank">PROJECTS</a> <span>|</span>
+            <a href="resume.html" target="_blank">RESUME</a> <span>|</span>
             <a href="#">CONTACT</a>
         </nav>
 
@@ -206,47 +122,6 @@
             <h2>Senior Economist | Data Economist</h2>
         </div>
     </div>
-
-    <section id="projects" class="portfolio-section">
-        <h2>Technical Track & Code Repositories</h2>
-        
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div>
-                    <div class="project-title">Structural Inertia Map: Decision Boundaries</div>
-                    <div class="project-tech">Python | XGBoost | SHAP Values</div>
-                    <div class="project-desc">
-                        Methodological exercise leveraging non-linear tree architectures to map growth trends and structural thresholds. Uses XGBoost to determine complex decision boundaries applied to GDP variation data, fully integrated with the SHAP framework to safeguard strict economic interpretability and causal consistency.
-                    </div>
-                </div>
-                <a href="https://github.com/seu-usuario/seu-repositorio/tree/main/structural-inertia" target="_blank" class="btn-code">View Code</a>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <div class="project-title">Macro-Econometric Modeling: VECM Framework</div>
-                    <div class="project-tech">Python | Econometrics | Time Series</div>
-                    <div class="project-desc">
-                        Applied time series exercise tracking long-run cointegration vectors and short-run dynamics among macroeconomic variables. Features automated diagnostic pipelines, structural trace tests, and impulse-response functions for stable capital equilibrium analysis.
-                    </div>
-                </div>
-                <a href="https://github.com/seu-usuario/seu-repositorio/tree/main/vecm-exercise" target="_blank" class="btn-code">View Code</a>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <div class="project-title">Stochastic Regime Shifts: Markov-Switching</div>
-                    <div class="project-tech">Python | statsmodels | Markov Chains</div>
-                    <div class="project-desc">
-                        Quantitative tracking of structural breaks and multi-regime economic transitions. Implements MSIAH specifications to model variance changes and conditional state probabilities across distinct business cycle contractions and expansions.
-                    </div>
-                </div>
-                <a href="https://github.com/seu-usuario/seu-repositorio/tree/main/markov-switching" target="_blank" class="btn-code">View Code</a>
-            </div>
-
-        </div>
-    </section>
 
 </body>
 </html>
