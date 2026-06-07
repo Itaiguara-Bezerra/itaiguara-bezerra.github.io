@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0f12 !important; /* Força o fundo escuro da capa */
+            background-color: #0b0f12 !important; /* Forces the deep dark background */
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
@@ -43,7 +43,7 @@
             padding: 40px 20px 100px 20px;
         }
 
-        /* Botão Voltar Discreto */
+        /* Discrete Back Button */
         .btn-back {
             display: inline-flex;
             align-items: center;
@@ -71,6 +71,33 @@
             align-items: flex-end;
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        /* Clean Download Buttons to Match the Landing Page Strategy */
+        .download-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .botao-pdf {
+            padding: 10px 18px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .botao-pdf:hover {
+            background-color: #ffffff;
+            color: #0b0f12;
+            border-color: #ffffff;
         }
 
         .grid-curriculo {
@@ -147,25 +174,6 @@
         .lista-bullets li {
             margin-bottom: 6px;
         }
-
-        .botao-pdf {
-            padding: 10px 20px;
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .botao-pdf:hover {
-            background-color: #ffffff;
-            color: #0b0f12;
-        }
     </style>
 </head>
 <body>
@@ -189,7 +197,10 @@
                 <h1 style="margin: 0; font-size: 2.3rem; font-weight: 700; color: #e0e0e0; letter-spacing: -0.5px;">Itaiguara Bezerra</h1>
                 <p style="margin: 6px 0 0 0; font-size: 1.1rem; color: #c5a880; font-weight: 500;">Senior Economist & Data Economist</p>
             </div>
-            <a href="curriculo-itaiguara.pdf" download class="botao-pdf">Download PDF Version (LaTeX)</a>
+            <div class="download-group">
+                <a href="curriculo_estendido_pt.pdf" target="_blank" class="botao-pdf">Download Portuguese Version</a>
+                <a href="resume_full_en.pdf" target="_blank" class="botao-pdf">Download English Version</a>
+            </div>
         </div>
 
         <div class="grid-curriculo">
@@ -204,7 +215,7 @@
                     </div>
                     <p class="empresa-nome">Getulio Vargas Foundation (FGV) in partnership with SEBRAE</p>
                     <p class="texto-descricao">
-                        Condução de avaliações conjunturais e econômicas focadas no universo das micro e pequenas empresas no Brasil. Responsável direto pela preparação técnica, tratamento estatístico de séries temporais e emissão mensal do relatório do <strong>Índice de Confiança das Micro e Pequenas Empresas (IC-MPE)</strong>, fornecendo diagnósticos quantitativos para suporte a tomadas de decisão estratégicas e institucionais.
+                        Conducted periodic business cycle and economic analyses focusing on the performance of Micro and Small Enterprises (MSEs) in Brazil. Directly responsible for technical data prep, statistical time series handling, and the monthly release of the **Micro and Small Enterprises Confidence Index (IC-MPE)** analytical report, delivering quantitative diagnostics to guide strategic and institutional policy choices.
                     </p>
                 </div>
 
@@ -213,7 +224,7 @@
                         <h3 class="cargo-titulo">Technical Coordinator</h3>
                         <span class="tag-data">2023 - 2025</span>
                     </div>
-                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Independent Contractor</p>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - International Directorate (DINT)</p>
                     <p class="texto-descricao">
                         Responsible for data collection, processing, and structural preparation of the Latin America Business Tendency Survey for the International Directorate (DINT). Developed macroeconomic scenario projections using applied Econometrics and Machine Learning pipelines to map regional economic cycles.
                     </p>
@@ -224,9 +235,9 @@
                         <h3 class="cargo-titulo">Economic Analyst (Sectorial Databases)</h3>
                         <span class="tag-data">2021 - 2024</span>
                     </div>
-                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Independent Contractor</p>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Sectoral Directorate</p>
                     <p class="texto-descricao">
-                        Gestão, consistência e estruturação de bancos de dados macroeconômicos globais e setoriais voltados para o mercado de árvores cultivadas. Atuação na modelagem de projeções econométricas e elaboração do miolo estatístico-analítico do Relatório Anual da Indústria Brasileira de Árvores (Ibá).
+                        Managed data ingestion, consistency checking, and structural optimization for global and sectoral macroeconomic databases tracking the cultivated trees market. Applied econometric projection modeling and designed the key statistical-descriptive assets for the Brazilian Tree Industry Yearbook (Ibá).
                     </p>
                 </div>
 
@@ -247,12 +258,12 @@
                         <h3 class="cargo-titulo">Economic Analysis Specialist</h3>
                         <span class="tag-data">2010 - 2018</span>
                     </div>
-                    <p class="empresa-nome">Getulio Vargas Foundation (FGV)</p>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Assistant Superintendency for Economic Cycles (SACE)</p>
                     <ul class="lista-bullets">
                         <li>Coordinator and main substitute spokesperson for the Construction Business Tendency Survey.</li>
                         <li>Coordinator of the Composite Economic Indicators for Brazil, structured in technical partnership with <strong>The Conference Board (TCB)</strong>.</li>
                         <li>Developed, researched, and deployed the implementation framework for the Capacity Utilization Rate (NUCI) tailored to Non-Manufacturing Sectors.</li>
-                        <li>Condução de pesquisas econométricas e estatísticas aplicadas sobre ciclos econômicos, emprego e indicadores estruturais da economia brasileira.</li>
+                        <li>Conducted applied econometric and statistical research regarding business cycles, employment dynamics, and structural indicators of the Brazilian economy.</li>
                     </ul>
                 </div>
 
@@ -330,6 +341,28 @@
                         <span class="tag-data">1999</span>
                     </div>
                     <p class="empresa-nome">Federal University of Rio de Janeiro (UFRJ) — IE Praia Vermelha</p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Selected Peer-Reviewed Publications</h3>
+                        <span class="tag-data">Academic Journals</span>
+                    </div>
+                    <p class="empresa-nome">Applied Economics Journal (Qualis-CAPES A3)</p>
+                    <ul class="lista-bullets">
+                        <li><strong>BEZERRA, Itaiguara</strong>. <i>Índice de Incerteza Empresarial: Uma Abordagem usando Microdados de Sondagens</i>. v. 21, no. 4, pp. 659-679, 2017.</li>
+                        <li><strong>BEZERRA, Itaiguara</strong>; MALGARINI, Marco. <i>A new measure of the non-inflationary rate of capacity utilisation for the brazilian economy</i>. v. 20, no. 4, pp. 441-454, 2016.</li>
+                    </ul>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">International Conferences & Congresses</h3>
+                        <span class="tag-data">CIRET</span>
+                    </div>
+                    <p class="texto-descricao">
+                        Active participation and presentation of scientific developments regarding business cycles, macroeconomic structural trends, and capacity utilization measurements built on corporate survey microdata at the **CIRET Conference (Centre for International Research on Economic Tendency Surveys)**.
+                    </p>
                 </div>
 
                 <h2 class="titulo-bloco" style="margin-top: 50px;">Technical Core & Data Portfolio</h2>
