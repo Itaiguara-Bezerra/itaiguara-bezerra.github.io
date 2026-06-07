@@ -3,114 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itaiguara Bezerra | Senior Economist | Data Economist</title>
-    
+    <title>Itaiguara de Oliveira Bezerra | Senior & Data Economist</title>
     <style>
-        body {
+        :root {
+            --primary-blue: #14326E;
+            --black-titles: #000000;
+            --dark-gray: #2B2B2B;
+            --light-gray: #646464;
+            --table-bg: #F7F9FC;
+            --bg-color: #FAFAFA;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #0b0f12;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
         }
 
-        .secao-capa {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            background-image: url('background.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--bg-color);
+            padding: 40px 20px;
         }
 
-        .navbar {
-            position: absolute;
-            top: 30px;
-            right: 8%;
-            z-index: 100;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        header h2 {
+            color: var(--light-gray);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
             font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-left: 25px;
-            transition: color 0.3s ease;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
         }
 
-        .navbar a:hover, .navbar a.active {
-            color: #c5a880;
-        }
-
-        .container-esquerda {
-            padding-left: 8%;
-            max-width: 60%; 
-            z-index: 10;
-        }
-
-        .nome-autor {
-            font-size: 3rem; 
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 0 0.5rem 0;
-            color: #e0e0e0 !important;
-            white-space: nowrap;
-        }
-
-        .cargos-autor {
-            font-size: 1.15rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #c5a880 !important;
-            margin-bottom: 2.5rem;
-        }
-
-        .botao-portfolio {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid #ffffff;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+        .contact-info a {
+            color: var(--primary-blue);
             text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
         }
 
-        .botao-portfolio:hover {
-            background-color: #ffffff;
-            color: #0b0f12;
-            cursor: pointer;
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bilingual Download Buttons */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            border: 1px solid var(--primary-blue);
+        }
+
+        .btn-cv:hover {
+            background-color: #0d2352;
+            border-color: #0d2352;
+        }
+
+        hr {
+            border: none;
+            height: 1.5pt;
+            background-color: var(--black-titles);
+            margin: 20px 0;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 35px;
+        }
+
+        section h3 {
+            color: var(--black-titles);
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .item-sub {
+            font-style: italic;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Toolkit Grid (Modern Cards) */
+        .toolkit-grid {
+            display: block;
+        }
+
+        .toolkit-card {
+            background: var(--table-bg);
+            border-left: 4px solid var(--primary-blue);
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .toolkit-card strong {
+            color: var(--black-titles);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+            .item-header { flex-direction: column; }
+            .btn-container { flex-direction: column; width: 100%; }
+            .btn-cv { text-align: center; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <header class="secao-capa">
-        <nav class="navbar">
-            <a href="index.html" class="active">About</a>
-            <a href="#projects">Projects</a>
-            <a href="resume.html">Resume</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="container-esquerda">
-            <h1 class="nome-autor">Itaiguara Bezerra</h1>
-            <div class="cargos-autor">Senior Economist | Data Economist</div>
-            <a href="resume.html" class="botao-portfolio">[View Detailed Resume]</a>
+<div class="container">
+    <header>
+        <h1>ITAIGUARA DE OLIVEIRA BEZERRA</h1>
+        <h2>Senior Economist & Data Economist</h2>
+        <div class="contact-info">
+            Phones: +55 21 99445-7909 | +55 21 3100-7095 &bull; E-mail: <a href="mailto:itaiguara@terra.com.br">itaiguara@terra.com.br</a><br>
+            Academic Portfolio (Lattes): <a href="http://lattes.cnpq.br/6607723810297253" target="_blank">lattes.cnpq.br/6607723810297253</a>
+        </div>
+        <div class="btn-container">
+            <a href="#" class="btn-cv">DOWNLOAD PORTUGUESE VERSION</a>
+            <a href="#" class="btn-cv">DOWNLOAD ENGLISH VERSION</a>
         </div>
     </header>
 
-</body>
-</html>
+    <hr>
+
+    <section>
+        <h3>Professional Summary</h3>
+        <p style="font-size: 1rem; text-align: justify;">
+            Economist with a solid academic background and over two decades of experience at the intersection of macroeconomic business cycle analysis and applied Data Science. Expert in developing economic indicators, processing complex statistical microdata, and advanced econometric modeling. Highly skilled in integrating classical causal inference with modern Machine Learning algorithms (Boosting ensembles). Proven track record in core technical roles and operational coordination at Fundação Getulio Vargas (FGV/IBRE) and providing analytical support for SEBRAE
