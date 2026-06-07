@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Itaiguara Bezerra</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0f12; /* Fundo sólido sóbrio igual ao resume.html */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 60px 8% 80px 8%;
+        }
+
+        /* Cabeçalho Técnico (Identidade Visual Unificada) */
+        header {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            position: relative;
+        }
+
+        .nav-back {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .nav-back a {
+            color: #c5a880;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        .nav-back a:hover {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            border-bottom: 2px solid #232e3c;
+            padding-bottom: 15px;
+        }
+
+        /* Container de Projetos */
+        .projects-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Card do Projeto Expandido */
+        .project-block {
+            background-color: #131a22;
+            border: 1px solid #232e3c;
+            border-radius: 6px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .project-header {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #c5a880;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-description {
+            font-size: 0.98rem;
+            color: #d1d5db;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        /* Grade de Arquivos e Repositórios Vincular ao GitHub */
+        .file-links-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #a3a3a3;
+            margin-bottom: 15px;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .file-card {
+            background-color: #0b0f12;
+            border: 1px solid #232e3c;
+            border-radius: 4px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .file-card:hover {
+            border-color: #c5a880;
+            background-color: #161f29;
+        }
+
+        .file-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+
+        .file-type {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #8e9aa8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 40px 5% 60px 5%; }
+            .project-block { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+            .project-title { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-back">
+            <a href="index.html">← Back to Home</a>
+        </div>
+        <h1>Technical Track & Code Repositories</h1>
+    </header>
+
+    <main class="projects-container">
+
+        <article class="project-block">
+            <div class="project-header">
+                <h2 class="project-title">Data Economics: Geopolitical Stress & Market Resilience (2025-2026)</h2>
+                <div class="project-meta">Python | Econometrics | Machine Learning</div>
+            </div>
+
+            <div class="project-description">
+                This project investigates the impact of the 2026 Israel-Iran conflict on the Brazilian market, challenging the common narrative of a new structural break. By combining Dimensionality Reduction (PCA) and Regime Identification (K-Means Clustering) with classical structural break diagnostics (Zivot-Andrews and Markov Switching Models), the analysis demonstrates that the market's underlying physics shifted in April 2025. The 2026 events represent a continuation of this high-stress, high-commodity regime rather than a new baseline.
+            </div>
+
+            <div class="file-links-title">Project Blueprint & Source Files</div>
+            <div class="files-grid">
+                
+                <a href="https://github.com/seu-usuario/seu-repositorio/blob/main/Geopolitical_Oil_Impact.ipynb" target="_blank" class="file-card">
+                    <div class="file-name">Geopolitical_Oil_Impact.ipynb</div>
+                    <div class="file-type">Jupyter Notebook</div>
+                </a>
+
+                <a href="https://github.com/seu-usuario/seu-repositorio/blob/main/loadings_analysis.xlsx" target="_blank" class="file-card">
+                    <div class="file-name">loadings_analysis.xlsx</div>
+                    <div class="file-type">PCA Loadings Data</div>
+                </a>
+
+                <a href="https://github.com/seu-usuario/seu-repositorio/blob/main/scatter_commodities_market_final.png" target="_blank" class="file-card">
+                    <div class="file-name">scatter_commodities_market_final.png</div>
+                    <div class="file-type">Regime Cluster Chart</div>
+                </a>
+
+                <a href="https://github.com/seu-usuario/seu-repositorio/blob/main/README.md" target="_blank" class="file-card">
+                    <div class="file-name">README.md</div>
+                    <div class="file-type">Documentation</div>
+                </a>
+
+            </div>
+        </article>
+
+        </main>
+
+</body>
+</html>
