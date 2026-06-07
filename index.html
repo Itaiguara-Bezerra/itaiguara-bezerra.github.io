@@ -3,308 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itaiguara de Oliveira Bezerra | Senior & Data Economist</title>
+    <title>Itaiguara Bezerra | Senior Economist & Data Economist</title>
     <style>
-        :root {
-            --primary-blue: #14326E;
-            --black-titles: #000000;
-            --dark-gray: #2B2B2B;
-            --light-gray: #646464;
-            --table-bg: #F7F9FC;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body {
+        body, html {
+            height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            /* Injeta a imagem de fundo com as equações e redes neurais */
+            background-color: #0b151e;
+            overflow-x: hidden;
+        }
+
+        /* Container da Landing Page com a imagem de fundo cheia */
+        .hero-viewport {
+            width: 100%;
+            height: 100vh;
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             background-repeat: no-repeat;
-            padding: 60px 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            /* Fundo branco com leve opacidade para integrar ao cenário sem perder leitura */
-            background: rgba(255, 255, 255, 0.96);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            color: var(--primary-blue);
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-        }
-
-        header h2 {
-            color: var(--light-gray);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-        }
-
-        .contact-info a {
-            color: var(--primary-blue);
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Bilingual Download Buttons */
-        .btn-container {
+            position: relative;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        /* Menu Superior de Navegação Dinâmica */
+        nav {
+            position: absolute;
+            top: 40px;
+            right: 8%;
+            display: flex;
             gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .btn-cv {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-            border: 1px solid var(--primary-blue);
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
         }
 
-        .btn-cv:hover {
-            background-color: #0d2352;
-            border-color: #0d2352;
+        nav a:hover {
+            opacity: 1;
         }
 
-        hr {
-            border: none;
-            height: 1.5pt;
-            background-color: var(--black-titles);
-            margin: 20px 0;
+        nav span {
+            color: #ffffff;
+            opacity: 0.4;
         }
 
-        /* Sections */
-        section {
-            margin-top: 20px; /* Micro-ajuste de respiro que alinhamos */
-            margin-bottom: 35px;
+        /* Bloco de Conteúdo Principal (Alinhado à Esquerda) */
+        .content-block {
+            max-width: 650px;
+            color: #ffffff;
+            z-index: 2;
         }
 
-        section h3 {
-            color: var(--black-titles);
-            font-size: 1.3rem;
+        .content-block h1 {
+            font-size: 3.8rem;
             font-weight: 700;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
-        .item {
-            margin-bottom: 20px;
+        .content-block h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #d1d5db; /* Tom cinza claro nobre */
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
 
-        .item-header {
+        /* Botões Estilo Metálico/Glow conforme o Modelo */
+        .btn-group {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-weight: bold;
-            margin-bottom: 4px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .item-sub {
-            font-style: italic;
-            color: var(--dark-gray);
+        .btn-detailed {
+            display: inline-block;
+            padding: 14px 28px;
             font-size: 0.95rem;
-            margin-bottom: 6px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(180deg, #1d2d44 0%, #0f172a 100%);
+            border: 2px solid #475569;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-            margin-bottom: 10px;
+        .btn-detailed:hover {
+            border-color: #38bdf8; /* Brilho azul elétrico no hover */
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            transform: translateY(-1px);
         }
 
-        li {
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-
-        /* Toolkit Grid (Modern Cards) */
-        .toolkit-grid {
-            display: block;
-        }
-
-        .toolkit-card {
-            background: var(--table-bg);
-            border-left: 4px solid var(--primary-blue);
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .toolkit-card strong {
-            color: var(--black-titles);
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        /* Responsiveness */
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .container { padding: 20px; }
-            .item-header { flex-direction: column; }
-            .btn-container { flex-direction: column; width: 100%; }
-            .btn-cv { text-align: center; width: 100%; }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            nav {
+                top: 20px;
+                right: 5%;
+                font-size: 0.8rem;
+                gap: 8px;
+            }
+            .hero-viewport {
+                padding: 0 5%;
+            }
+            .content-block h1 {
+                font-size: 2.5rem;
+            }
+            .content-block h2 {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-detailed {
+                text-align: center;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>ITAIGUARA DE OLIVEIRA BEZERRA</h1>
-        <h2>Senior Economist & Data Economist</h2>
-        <div class="contact-info">
-            Phones: +55 21 99445-7909 | +55 21 3100-7095 &bull; E-mail: <a href="mailto:itaiguara@terra.com.br">itaiguara@terra.com.br</a><br>
-            Academic Portfolio (Lattes): <a href="http://lattes.cnpq.br/6607723810297253" target="_blank">lattes.cnpq.br/6607723810297253</a>
-        </div>
-        <div class="btn-container">
-            <a href="#" class="btn-cv">DOWNLOAD PORTUGUESE VERSION</a>
-            <a href="#" class="btn-cv">DOWNLOAD ENGLISH VERSION</a>
-        </div>
-    </header>
+    <div class="hero-viewport">
+        <nav>
+            <a href="#">HOME</a> <span>|</span>
+            <a href="#">ABOUT</a> <span>|</span>
+            <a href="#">PROJECTS</a> <span>|</span>
+            <a href="#">RESUME</a> <span>|</span>
+            <a href="#">CONTACT</a>
+        </nav>
 
-    <hr>
-
-    <section>
-        <h3>Professional Summary</h3>
-        <p style="font-size: 1rem; text-align: justify;">
-            Economist with a solid academic background and over two decades of experience at the intersection of macroeconomic business cycle analysis and applied Data Science. Expert in developing economic indicators, processing complex statistical microdata, and advanced econometric modeling. Highly skilled in integrating classical causal inference with modern Machine Learning algorithms (Boosting ensembles). Proven track record in core technical roles and operational coordination at Fundação Getulio Vargas (FGV/IBRE) and providing analytical support for SEBRAE Nacional.
-        </p>
-    </section>
-
-    <section>
-        <h3>Technical Competencies & Scientific Toolkit</h3>
-        <div class="toolkit-grid">
-            <div class="toolkit-card">
-                <strong>Data Science & Machine Learning</strong>
-                Python Language, R Language, Ensemble Algorithms (Boosting Triad: XGBoost, CatBoost, and LightGBM), Feature Engineering, Cross-Validation, Model Interpretability via SHAP Values.
-            </div>
-            <div class="toolkit-card">
-                <strong>Applied Econometrics & Time Series</strong>
-                Markov-Switching Dynamic Models (Regime Shifts), Vector Error Correction Models (VECM), Vector Autoregressions (VAR), Structural Statistical Modeling of Time Series.
-            </div>
-            <div class="toolkit-card">
-                <strong>Specialized Software & Databases</strong>
-                EViews, STATA, OxMetrics (STAMP package), SQL (Structural Logic, Complex Queries, and Relational Database Manipulation / SQLite), Advanced Excel.
-            </div>
-            <div class="toolkit-card">
-                <strong>Data Visualization & Business Intelligence</strong>
-                Power BI (Analytical Dashboard Engineering), Scientific Stack Visualization Libraries (Matplotlib, Seaborn).
+        <div class="content-block">
+            <h1>Itaiguara Bezerra</h1>
+            <h2>Senior Economist | Data Economist</h2>
+            
+            <div class="btn-group">
+                <a href="curriculo_estendido_pt.pdf" target="_blank" class="btn-detailed">Download Portuguese Version</a>
+                <a href="curriculo_estendido_en.pdf" target="_blank" class="btn-detailed">Download English Version</a>
             </div>
         </div>
-    </section>
-
-    <section>
-        <h3>Project Portfolio (Technical Tracks)</h3>
-        <div class="item">
-            <div class="item-header">
-                <span>Structural Inertia Map: Decision Boundaries Applied to GDP</span>
-                <span>2026</span>
-            </div>
-            <div class="item-sub">Boosting Algorithms & Economic Interpretability</div>
-            <p style="font-size: 0.95rem; text-align: justify;">
-                Development of a predictive and visual framework to map the structural inertia of economic growth. The project leverages the XGBoost algorithm to delimit complex decision boundaries on GDP variation and demand component datasets, utilizing the SHAP (SHapley Additive exPlanations) framework to extract feature importance vectors, ensuring theoretical consistency and strict economic interpretability of the Machine Learning outputs.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h3>Selected Professional Experience</h3>
-        
-        <div class="item">
-            <div class="item-header">
-                <span>Economic Analyst (Consulting Contractor)</span>
-                <span>2021 -- Present</span>
-            </div>
-            <div class="item-sub">FGV / IBRE & SEBRAE Nacional</div>
-            <ul>
-                <li>Conducted periodic macroeconomic analyses focusing on the performance of Micro and Small Enterprises (MSEs) nationwide.</li>
-                <li>Processed primary survey microdata for the design and synthesis of the monthly analytical report for the <strong>Micro and Small Enterprises Confidence Index (IC-MPE)</strong>.</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span>Technical Coordinator (Consulting Contractor)</span>
-                <span>2023 -- 2025</span>
-            </div>
-            <div class="item-sub">Fundação Getulio Vargas — International Directorate (DINT)</div>
-            <ul>
-                <li>Directly responsible for data ingestion, outlier removal, and technical consistency checks for historical datasets associated with the <strong>Latin American Survey</strong>.</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span>Economic Analysis Specialist</span>
-                <span>2010 -- 2018</span>
-            </div>
-            <div class="item-sub">FGV — Assistant Superintendency for Economic Cycles (SACE)</div>
-            <ul>
-                <li>Coordinated technical operations and data consistency routines for the <strong>Construction Industry Survey</strong> and the <strong>Composite Indexes of the Brazilian Economy</strong> (in technical cooperation with <i>The Conference Board</i>).</li>
-                <li>Technical lead for the analytical design and methodological implementation of the Capacity Utilization Rate (NUCI) applied to Non-Manufacturing Sectors.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h3>Intellectual Production & Media</h3>
-        <div class="item">
-            <div class="item-header">
-                <span>Revista Economia Aplicada (Qualis-CAPES A3)</span>
-                <span>2016 -- 2017</span>
-            </div>
-            <ul>
-                <li><strong>BEZERRA, Itaiguara</strong>. <i>Índice de Incerteza Empresarial: Uma Abordagem usando Microdados de Sondagens</i>. v. 21, no. 4, 2017.</li>
-                <li><strong>BEZERRA, Itaiguara</strong>; MALGARINI, Marco. <i>A new measure of the non-inflationary rate of capacity utilisation for the brazilian economy</i>. v. 20, no. 4, 2016.</li>
-            </ul>
-        </div>
-        <div class="item" style="margin-top: 10px;">
-            <div class="item-sub" style="font-weight: bold; font-style: normal;">National Media Presence</div>
-            <p style="font-size: 0.95rem;">Served frequently as an official press spokesperson providing technical context on business cycle findings for top-tier national financial networks and outlets, including: <i>Valor Econômico, O Estado de S. Paulo, Folha de S. Paulo, BandNews Radio & TV, and Portal R7</i>.</p>
-        </div>
-    </section>
-</div>
+    </div>
 
 </body>
 </html>
