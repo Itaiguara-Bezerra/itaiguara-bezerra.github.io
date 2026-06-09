@@ -48,57 +48,15 @@
             color: #c5a880;
         }
 
-        .header-intro-block {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 2px solid #232e3c;
-            padding-bottom: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .title-area h1 {
+        h1 {
             font-size: 2.2rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .title-area p {
-            font-size: 1.1rem;
-            color: #c5a880;
-            font-weight: 500;
-        }
-
-        /* Área dos Botões de Download */
-        .download-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 5px;
-        }
-
-        .btn-download {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #ffffff;
-            text-decoration: none;
-            border: 1px solid #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .btn-download:hover {
-            background-color: #ffffff;
-            color: #0b0f12;
+            border-bottom: 2px solid #232e3c;
+            padding-bottom: 15px;
+            margin-top: 20px;
         }
 
         /* Container do Conteúdo */
@@ -135,25 +93,12 @@
             font-size: 1.15rem;
             color: #ffffff;
             font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .resume-item .year-tag {
-            font-size: 0.85rem;
-            background-color: #232e3c;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            color: #ffffff;
         }
 
         .resume-item .institution {
             color: #c5a880;
             font-weight: 500;
             margin-bottom: 5px;
-            font-size: 1rem;
         }
 
         .resume-item .date {
@@ -161,8 +106,6 @@
             color: #9ca3af;
             font-family: monospace;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .resume-item p {
@@ -220,20 +163,6 @@
         .btn-back-home:hover {
             color: #c5a880;
         }
-
-        @media (max-width: 768px) {
-            .header-intro-block {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .download-buttons {
-                width: 100%;
-                flex-direction: column;
-            }
-            .btn-download {
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -251,17 +180,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             Back to Home
         </a>
-
-        <div class="header-intro-block">
-            <div class="title-area">
-                <h1>Itaiguara Bezerra</h1>
-                <p>Senior Economist & Data Economist</p>
-            </div>
-            <div class="download-buttons">
-                <a href="#" class="btn-download">Download Portuguese Version</a>
-                <a href="#" class="btn-download">Download English Version</a>
-            </div>
-        </div>
+        <h1>Resume</h1>
     </header>
 
     <main class="content-container">
@@ -269,10 +188,11 @@
             <h2>Professional Experience</h2>
             
             <div class="resume-item">
-                <h3>Economic Analyst (Macroeconomic Conjuncture) <span class="year-tag">2021 - PRESENT</span></h3>
-                <div class="institution">Getulio Vargas Foundation (FGV) in partnership with SEBRAE</div>
+                <h3>Socioeconomic Analyst</h3>
+                <div class="institution">SEBRAE Reports & Regional Analytics</div>
+                <div class="date">2021 - PRESENT</div>
                 <p>
-                    Conducted periodic business cycle and economic analyses focusing on the performance of Micro and Small Enterprises (MSEs) in Brazil. Directly responsible for technical data prep, statistical time series handling, and the monthly release of the **Micro and Small Enterprises Confidence Index (IC-MPE)** analytical report, delivering quantitative diagnostics to guide strategic and institutional policy choices.
+                    Tratamento, consolidação e modelagem de matrizes de dados complexas para a formulação de relatórios económicos de conjuntura. Desenvolvimento de tabelas estruturais dinâmicas e engenharia de visualização de dados focada em indicadores de desempenho regional, como o IC-MPE.
                 </p>
             </div>
         </section>
@@ -281,16 +201,12 @@
             <h2>Education</h2>
             
             <div class="resume-item">
-                <h3>M.Sc. in Business Economics and Finance <span class="year-tag">2014</span></h3>
-                <div class="institution">Getulio Vargas Foundation (FGV-EPGE/IBRE)</div>
+                <h3>Master of Science (MSc) in Economics</h3>
+                <div class="institution">Getulio Vargas Foundation (FGV-EPGE)</div>
+                <div class="date">Rio de Janeiro, Brazil – 2014</div>
                 <p>
-                    Thesis: "Non-Inflationary Rate of Capacity Utilization: An Approach Using Brazilian Microdata". Developed three metrics (Survey, Coincident, and Antecedent NIRCU) using industrial microdata from IBRE/FGV to trace price pressure thresholds. Comparative testing against classical output gaps using OLS (MQO) frameworks.
+                    Formação estrita em teoria macroeconómica avançada, microeconomia rigorosa e econometria aplicada a séries temporais complexas.
                 </p>
-            </div>
-
-            <div class="resume-item">
-                <h3>MBA in Corporate Management and Finance <span class="year-tag">2002</span></h3>
-                <div class="institution">Getulio Vargas Foundation (FGV)</div>
             </div>
         </section>
 
