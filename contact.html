@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Itaiguara Bezerra</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f12 !important; /* Forces the deep dark background */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .navbar-resume {
+            position: relative;
+            padding: 30px 8% 0 0;
+            text-align: right;
+            z-index: 100;
+        }
+
+        .navbar-resume a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-left: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-resume a:hover, .navbar-resume a.active {
+            color: #c5a880;
+        }
+
+        .resume-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 20px 100px 20px;
+        }
+
+        /* Discrete Back Button */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: #c5a880;
+        }
+
+        .cabecalho-curriculo {
+            border-bottom: 2px solid #c5a880;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background-color: #0b0f12;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #c5a880;
+            background-color: #11161b;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            color: #c5a880;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        .contact-link:hover {
+            color: #c5a880;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-resume">
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="resume-container">
+        
+        <a href="index.html" class="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            BACK TO HOME
+        </a>
+
+        <div class="cabecalho-curriculo">
+            <h1 style="margin: 0; font-size: 2.3rem; font-weight: 700; color: #e0e0e0; letter-spacing: -0.5px;">Contact</h1>
+            <p style="margin: 6px 0 0 0; font-size: 1.1rem; color: #c5a880; font-weight: 500;">Professional Connections & Networks</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Card de E-mail -->
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:seu-email@provedor.com" class="contact-link">seu-email@provedor.com</a>
+            </div>
+
+            <!-- Card do LinkedIn -->
+            <div class="contact-card">
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="contact-link">linkedin.com/in/seu-perfil</a>
+            </div>
+
+            <!-- Card do GitHub -->
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <a href="https://github.com/seu-usuario" target="_blank" class="contact-link">github.com/seu-usuario</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
