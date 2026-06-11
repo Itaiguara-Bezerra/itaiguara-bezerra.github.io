@@ -78,7 +78,7 @@
 
         /* Bloco de Conteúdo Esquerdo */
         .content-block {
-            max-width: 55%;
+            max-width: 50%;
             color: #ffffff;
             z-index: 2;
         }
@@ -103,7 +103,7 @@
             margin-bottom: 40px;
         }
 
-        /* Botão estilizado idêntico ao da imagem [VIEW DETAILED PORTFOLIO] */
+        /* Botão estilizado [VIEW DETAILED PORTFOLIO] */
         .btn-portfolio {
             display: inline-block;
             padding: 14px 28px;
@@ -126,49 +126,39 @@
             transform: translateY(-1px);
         }
 
-        /* Bloco do Gráfico Estatístico à Direita (Dashboard Integrado) */
+        /* Bloco do Gráfico Estatístico Ativo à Direita */
         .chart-container {
-            width: 40%;
-            max-width: 450px;
-            aspect-ratio: 1.2;
-            background-color: rgba(19, 26, 34, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            padding: 20px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+            width: 42%;
+            max-width: 500px;
             z-index: 2;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: rgba(11, 15, 18, 0.3);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: border-color 0.3s ease;
         }
 
         .chart-container:hover {
-            border-color: #c5a880;
+            border-color: rgba(197, 168, 128, 0.4);
         }
 
-        /* Placeholder do Gráfico Corrente - Pronto para receber o script/imagem */
-        .chart-placeholder {
+        /* Renderização da Imagem de Forma Responsiva e Nítida */
+        .chart-image {
             width: 100%;
-            height: 100%;
-            border: 1px dashed rgba(255, 255, 255, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #8892b0;
-            font-family: monospace;
-            font-size: 0.85rem;
-            text-align: center;
-            background-color: rgba(11, 15, 18, 0.5);
+            height: auto;
             border-radius: 4px;
+            display: block;
         }
 
         @media (max-width: 992px) {
             .hero-viewport {
                 flex-direction: column;
                 justify-content: center;
-                gap: 50px;
+                gap: 40px;
                 padding-top: 100px;
                 height: auto;
                 min-height: 100vh;
@@ -179,7 +169,7 @@
             }
             .chart-container {
                 width: 100%;
-                max-width: 400px;
+                max-width: 450px;
             }
             nav {
                 top: 20px;
@@ -209,12 +199,9 @@
             <a href="projects.html" class="btn-portfolio">[View Detailed Portfolio]</a>
         </div>
 
-        <!-- Lado Direito: Container do Gráfico Estatístico (Exercício Corrente) -->
+        <!-- Lado Direito: Gráfico do Exercício Corrente Integrado Dinamicamente -->
         <div class="chart-container">
-            <div class="chart-placeholder">
-                <!-- Aqui entrará a tag <img> com o seu gráfico gerado ou o container do Plotly/Dash -->
-                [ ARIMA / SARIMAX FORECAST MODEL OUTPUT <br> PLACEHOLDER FOR ACTIVE ECONOMIC GRAPH ]
-            </div>
+            <img src="xgboost_semaforo_economico_en.png" alt="Structural Inertia Map Decision Boundaries" class="chart-image">
         </div>
     </div>
 
