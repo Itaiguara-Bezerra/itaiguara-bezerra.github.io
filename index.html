@@ -14,11 +14,11 @@
         body, html {
             height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b151e;
-            overflow-x: hidden;
+            background-color: #0b1219;
+            overflow: hidden;
         }
 
-        /* Container da Landing Page com a imagem de fundo cheia */
+        /* Container Principal Baseado na Arte Quadro-Negro */
         .hero-viewport {
             width: 100%;
             height: 100vh;
@@ -29,18 +29,31 @@
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 0 8%;
         }
 
-        /* Menu Superior de Navegação Dinâmica */
+        /* Camada sutil escurecida para garantir legibilidade dos textos e equações */
+        .hero-viewport::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 18, 25, 0.4);
+            z-index: 1;
+        }
+
+        /* Menu Superior de Navegação Unificado */
         nav {
             position: absolute;
             top: 40px;
             right: 8%;
             display: flex;
             gap: 15px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: bold;
             letter-spacing: 1px;
             z-index: 10;
         }
@@ -48,60 +61,131 @@
         nav a {
             color: #ffffff;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
+            opacity: 0.7;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             opacity: 1;
+            color: #c5a880;
         }
 
         nav span {
             color: #ffffff;
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
-        /* Bloco de Conteúdo Principal (Alinhado à Esquerda) */
+        /* Bloco de Conteúdo Esquerdo */
         .content-block {
-            max-width: 750px;
+            max-width: 55%;
             color: #ffffff;
             z-index: 2;
         }
 
         .content-block h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             line-height: 1.1;
             margin-bottom: 12px;
             text-transform: uppercase;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .content-block h2 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 600;
-            color: #d1d5db;
+            color: #c5a880;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px;
         }
 
-        @media (max-width: 768px) {
+        /* Botão estilizado idêntico ao da imagem [VIEW DETAILED PORTFOLIO] */
+        .btn-portfolio {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(180deg, #16222f 0%, #0d1620 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 2px solid #4a6175;
+            border-radius: 4px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-portfolio:hover {
+            border-color: #c5a880;
+            box-shadow: 0px 4px 20px rgba(197, 168, 128, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Bloco do Gráfico Estatístico à Direita (Dashboard Integrado) */
+        .chart-container {
+            width: 40%;
+            max-width: 450px;
+            aspect-ratio: 1.2;
+            background-color: rgba(19, 26, 34, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .chart-container:hover {
+            border-color: #c5a880;
+        }
+
+        /* Placeholder do Gráfico Corrente - Pronto para receber o script/imagem */
+        .chart-placeholder {
+            width: 100%;
+            height: 100%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8892b0;
+            font-family: monospace;
+            font-size: 0.85rem;
+            text-align: center;
+            background-color: rgba(11, 15, 18, 0.5);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 992px) {
+            .hero-viewport {
+                flex-direction: column;
+                justify-content: center;
+                gap: 50px;
+                padding-top: 100px;
+                height: auto;
+                min-height: 100vh;
+            }
+            .content-block {
+                max-width: 100%;
+                text-align: center;
+            }
+            .chart-container {
+                width: 100%;
+                max-width: 400px;
+            }
             nav {
                 top: 20px;
                 right: 5%;
                 font-size: 0.8rem;
-                gap: 8px;
-            }
-            .hero-viewport {
-                padding: 0 5%;
-            }
-            .content-block h1 {
-                font-size: 2.5rem;
-            }
-            .content-block h2 {
-                font-size: 1.1rem;
+                gap: 10px;
             }
         }
     </style>
@@ -109,17 +193,28 @@
 <body>
 
     <div class="hero-viewport">
+        <!-- Menu de Navegação Superior Integrado -->
         <nav>
-            <a href="index.html">HOME</a> <span>|</span>
+            <a href="index.html" class="active">HOME</a> <span>|</span>
             <a href="about.html">ABOUT ME</a> <span>|</span>
             <a href="projects.html">PROJECTS</a> <span>|</span>
             <a href="resume.html">RESUME</a> <span>|</span>
-            <a href="#">CONTACT</a>
+            <a href="contact.html">CONTACT</a>
         </nav>
 
+        <!-- Lado Esquerdo: Identidade Institucional -->
         <div class="content-block">
             <h1>Itaiguara Bezerra</h1>
             <h2>Senior Economist | Data Economist</h2>
+            <a href="projects.html" class="btn-portfolio">[View Detailed Portfolio]</a>
+        </div>
+
+        <!-- Lado Direito: Container do Gráfico Estatístico (Exercício Corrente) -->
+        <div class="chart-container">
+            <div class="chart-placeholder">
+                <!-- Aqui entrará a tag <img> com o seu gráfico gerado ou o container do Plotly/Dash -->
+                [ ARIMA / SARIMAX FORECAST MODEL OUTPUT <br> PLACEHOLDER FOR ACTIVE ECONOMIC GRAPH ]
+            </div>
         </div>
     </div>
 
