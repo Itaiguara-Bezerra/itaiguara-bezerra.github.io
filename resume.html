@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Itaiguara Bezerra</title>
+    
     <style>
-        * {
-            box-sizing: border-box;
+        body {
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            background-color: #0b0f12;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f12 !important; /* Forces the deep dark background */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #ffffff;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Menu de Navegação Superior */
         .navbar-resume {
-            padding: 40px 8% 0 0;
-            text-align: right;
             position: relative;
-            z-index: 10;
+            padding: 30px 8% 0 0;
+            text-align: right;
+            z-index: 100;
         }
 
         .navbar-resume a {
@@ -34,29 +30,20 @@
             font-weight: bold;
             letter-spacing: 1px;
             margin-left: 25px;
-            opacity: 0.7;
-            transition: all 0.2s ease;
+            transition: color 0.3s ease;
         }
 
         .navbar-resume a:hover, .navbar-resume a.active {
-            opacity: 1;
             color: #c5a880;
         }
 
-        .navbar-resume span {
-            color: #ffffff;
-            opacity: 0.3;
-            margin-left: 25px;
-        }
-
-        /* Container Principal do Currículo */
         .resume-container {
             max-width: 1050px;
             margin: 0 auto;
             padding: 40px 20px 100px 20px;
         }
 
-        /* Botão Voltar Discreto */
+        /* Discrete Back Button */
         .btn-back {
             display: inline-flex;
             align-items: center;
@@ -75,218 +62,336 @@
             color: #c5a880;
         }
 
-        /* Cabeçalho do Currículo estilo "Quadro-Negro" / Linha Fina */
         .cabecalho-curriculo {
             border-bottom: 2px solid #c5a880;
             padding-bottom: 20px;
             margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .cabecalho-curriculo h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #e0e0e0;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
+        /* Clean Download Buttons to Match the Landing Page Strategy */
+        .download-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .cabecalho-curriculo p {
-            font-size: 1.2rem;
-            color: #c5a880;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+        .botao-pdf {
+            padding: 10px 18px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        /* Estrutura das Seções */
-        .resume-section {
-            margin-bottom: 50px;
+        .botao-pdf:hover {
+            background-color: #ffffff;
+            color: #0b0f12;
+            border-color: #ffffff;
         }
 
-        .section-title {
+        .grid-curriculo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 60px;
+        }
+
+        .grid-curriculo h2.titulo-bloco {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #c5a880;
+            color: #e0e0e0;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
-            border-left: 3px solid #c5a880;
-            padding-left: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
         }
 
-        /* Itens do Currículo */
-        .resume-item {
-            display: flex;
+        .item-experiencia {
             margin-bottom: 35px;
         }
 
-        .resume-date {
-            min-width: 200px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #b3b3b3;
-            padding-top: 2px;
+        .linha-topo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .resume-detailed {
-            flex-grow: 1;
-        }
-
-        .resume-detailed h3 {
-            font-size: 1.2rem;
+        .cargo-titulo {
+            margin: 0;
+            font-size: 1.15rem;
             font-weight: 600;
             color: #ffffff;
-            margin-bottom: 4px;
         }
 
-        .resume-detailed .institution {
+        .empresa-nome {
+            margin: 4px 0 10px 0;
             font-size: 0.95rem;
             color: #c5a880;
             font-weight: 500;
-            margin-bottom: 12px;
         }
 
-        .resume-detailed p {
-            font-size: 0.95rem;
-            color: #cccccc;
+        .tag-data {
+            font-size: 0.8rem;
+            color: #0b0f12;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        .texto-descricao {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #b3b3b3;
             text-align: justify;
+            line-height: 1.6;
         }
 
-        .resume-detailed ul {
-            margin-top: 10px;
-            margin-left: 18px;
-            color: #cccccc;
-            font-size: 0.95rem;
+        .lista-bullets {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+            font-size: 0.92rem;
+            color: #b3b3b3;
+            text-align: justify;
+            line-height: 1.6;
         }
 
-        .resume-detailed li {
+        .lista-bullets li {
             margin-bottom: 6px;
-        }
-
-        /* Responsividade para Telas Menores */
-        @media (max-width: 768px) {
-            .navbar-resume {
-                text-align: center;
-                padding-right: 0;
-            }
-            .navbar-resume a {
-                margin: 0 10px;
-                font-size: 0.8rem;
-            }
-            .navbar-resume span {
-                display: none;
-            }
-            .resume-item {
-                flex-direction: column;
-            }
-            .resume-date {
-                margin-bottom: 8px;
-            }
-            .cabecalho-curriculo h1 {
-                font-size: 2.2rem;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Menu de Navegação Superior Integrado -->
     <nav class="navbar-resume">
-        <a href="index.html">Home</a> <span>|</span>
-        <a href="about.html">About Me</a> <span>|</span>
-        <a href="projects.html">Projects</a> <span>|</span>
-        <a href="resume.html" class="active">Resume</a> <span>|</span>
+        <!-- MENU TOTALMENTE INTEGRADO COM A ESTRUTURA DO SEU INDEX.HTML -->
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html" class="active">Resume</a>
         <a href="contact.html">Contact</a>
     </nav>
 
     <div class="resume-container">
         
-        <!-- Botão de Retorno para a Home -->
         <a href="index.html" class="btn-back">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             BACK TO HOME
         </a>
 
-        <!-- Cabeçalho Principal -->
         <div class="cabecalho-curriculo">
-            <h1>Resume</h1>
-            <p>Academic & Professional Background</p>
-        </div>
-
-        <!-- SEÇÃO: EXPERIÊNCIA PROFISSIONAL -->
-        <div class="resume-section">
-            <h2 class="section-title">Professional Experience</h2>
-
-            <div class="resume-item">
-                <div class="resume-date">2019 - Present</div>
-                <div class="resume-detailed">
-                    <h3>Economic Analyst / Consultant</h3>
-                    <p class="institution">SEBRAE (via FGV IBRE / SACE)</p>
-                    <p>Responsible for analyzing microdata from business surveys, producing corporate macroeconomic reports, and conducting regional conjunctural analysis. Key tasks include data preparation, econometric modeling, and designing strategic insights for Micro and Small Enterprises (MPEs).</p>
-                </div>
+            <div>
+                <h1 style="margin: 0; font-size: 2.3rem; font-weight: 700; color: #e0e0e0; letter-spacing: -0.5px;">Itaiguara Bezerra</h1>
+                <p style="margin: 6px 0 0 0; font-size: 1.1rem; color: #c5a880; font-weight: 500;">Senior Economist & Data Economist</p>
             </div>
-
-            <div class="resume-item">
-                <div class="resume-date">Previous Experience</div>
-                <div class="resume-detailed">
-                    <h3>Macroeconomic & Sectoral Analyst</h3>
-                    <p class="institution">Consultancies & Industrial Associations (Ibá)</p>
-                    <p>Conducted extensive tracking of economic indicators, sectoral trends, and structural transformations. Experienced in using economic microdata to develop internal projections, evaluate industry performance, and support strategic corporate decision-making.</p>
-                </div>
+            <div class="download-group">
+                <a href="curriculo_estendido_pt.pdf" target="_blank" class="botao-pdf">Download Portuguese Version</a>
+                <a href="resume_full_en.pdf" target="_blank" class="botao-pdf">Download English Version</a>
             </div>
         </div>
 
-        <!-- SEÇÃO: EDUCAÇÃO -->
-        <div class="resume-section">
-            <h2 class="section-title">Education</h2>
-
-            <div class="resume-item">
-                <div class="resume-date">Postgraduate</div>
-                <div class="resume-detailed">
-                    <h3>Specialization in Data Science & Econometrics</h3>
-                    <p class="institution">Leading Academic Institution</p>
-                    <p>Advanced studies combining classical econometric frameworks (Time Series, Panel Data, Markov Chains) with modern Machine Learning techniques (Regularization, Ensemble Methods, Tree-based Models like XGBoost and CatBoost).</p>
+        <div class="grid-curriculo">
+            
+            <div>
+                <h2 class="titulo-bloco">Professional Experience</h2>
+                
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Economic Analyst (Macroeconomic Conjuncture)</h3>
+                        <span class="tag-data">2021 - Present</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) in partnership with SEBRAE</p>
+                    <p class="texto-descricao">
+                        Conducted periodic business cycle and economic analyses focusing on the performance of Micro and Small Enterprises (MSEs) in Brazil. Directly responsible for technical data prep, statistical time series handling, and the monthly release of the **Micro and Small Enterprises Confidence Index (IC-MPE)** analytical report, delivering quantitative diagnostics to guide strategic and institutional policy choices.
+                    </p>
                 </div>
-            </div>
 
-            <div class="resume-item">
-                <div class="resume-date">Academic Degree</div>
-                <div class="resume-detailed">
-                    <h3>Bachelor of Economics</h3>
-                    <p class="institution">University Level</p>
-                    <p>Solid foundational background in economic theory, quantitative methods, statistical analysis, and macroeconomic cycles.</p>
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Technical Coordinator</h3>
+                        <span class="tag-data">2023 - 2025</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - International Directorate (DINT)</p>
+                    <p class="texto-descricao">
+                        Responsible for data collection, processing, and structural preparation of the Latin America Business Tendency Survey for the International Directorate (DINT). Developed macroeconomic scenario projections using applied Econometrics and Machine Learning pipelines to map regional economic cycles.
+                    </p>
                 </div>
-            </div>
-        </div>
 
-        <!-- SEÇÃO: EVENTOS INTERNACIONAIS -->
-        <div class="resume-section">
-            <h2 class="section-title">International Events</h2>
-
-            <div class="resume-item">
-                <div class="resume-date">International Events</div>
-                <div class="resume-detailed">
-                    <h3>International Conferences & Congresses</h3>
-                    <p class="institution">CIRET / FGV IBRE</p>
-                    <p>Active participation and presentation of scientific developments regarding business cycles, macroeconomic structural trends, and capacity utilization measurements built on corporate survey microdata at the <strong>CIRET Conference (Centre for International Research on Economic Tendency Surveys)</strong>.</p>
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Economic Analyst (Sectorial Databases)</h3>
+                        <span class="tag-data">2021 - 2024</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Sectoral Directorate</p>
+                    <p class="texto-descricao">
+                        Managed data ingestion, consistency checking, and structural optimization for global and sectoral macroeconomic databases tracking the cultivated trees market. Applied econometric projection modeling and designed the key statistical-descriptive assets for the Brazilian Tree Industry Yearbook (Ibá).
+                    </p>
                 </div>
-            </div>
-        </div>
 
-        <!-- SEÇÃO: COMPETÊNCIAS TÉCNICAS -->
-        <div class="resume-section">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="resume-item">
-                <div class="resume-date">Skills & Tools</div>
-                <div class="resume-detailed">
-                    <ul>
-                        <li><strong>Quantitative Modeling:</strong> Applied Macroeconometrics, Structural Time Series, Non-linear Forecasting, Stochastic Processes.</li>
-                        <li><strong>Data Science Ecosystem:</strong> Python Core (Pandas, NumPy, Scikit-Learn), Gradient Boosting (XGBoost, CatBoost), SHAP Values for Model Explainability.</li>
-                        <li><strong>Analytical Reporting:</strong> Building clear narrative structures, transforming complex mathematical outputs into intuitive economic strategies.</li>
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Higher Education Lecturer & Evaluator</h3>
+                        <span class="tag-data">2017 - 2022</span>
+                    </div>
+                    <p class="empresa-nome">Universidade Grande Rio (UNIGRANRIO)</p>
+                    <ul class="lista-bullets">
+                        <li><strong>Lecturer:</strong> Structured curriculum architecture and conducted courses in "Quantitative Methods Applied to Management" for the Lato Sensu Postgraduate tracks.</li>
+                        <li><strong>Evaluator:</strong> Monitored, audited, and evaluated Distance Learning (EaD) graduate-level materials across Advanced Financial Mathematics, Capital Structure, Long-Term Financing Systems, and Mergers & Acquisitions (M&A).</li>
+                    </ul>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Economic Analysis Specialist</h3>
+                        <span class="tag-data">2010 - 2018</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV) - Assistant Superintendency for Economic Cycles (SACE)</p>
+                    <ul class="lista-bullets">
+                        <li>Coordinator and main substitute spokesperson for the Construction Business Tendency Survey.</li>
+                        <li>Coordinator of the Composite Economic Indicators for Brazil, structured in technical partnership with <strong>The Conference Board (TCB)</strong>.</li>
+                        <li>Developed, researched, and deployed the implementation framework for the Capacity Utilization Rate (NUCI) tailored to Non-Manufacturing Sectors.</li>
+                        <li>Conducted applied econometric and statistical research regarding business cycles, employment dynamics, and structural indicators of the Brazilian economy.</li>
+                    </ul>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Logistics & Project Evaluation Analyst</h3>
+                        <span class="tag-data">2007 - 2009</span>
+                    </div>
+                    <p class="empresa-nome">GEFCO Logística do Brasil (PSA Peugeot Citroën Group)</p>
+                    <ul class="lista-bullets">
+                        <li><strong>In-house Analyst at TKCSA (2008-2009):</strong> Supervised and structuralized internal and external logistics flows for vehicles and materials. Engineered and monitored Key Performance Indicators (KPIs) to audit supplier metrics at the ThyssenKrupp Companhia Siderúrgica do Atlântico construction site.</li>
+                        <li><strong>Studies Analyst (2007-2008):</strong> Conducted extensive external financial project evaluations using financial tracking metrics (Payback, IRR, NPV, Cash Flow modeling) under distinct macroeconomic risk scenarios. Optimized regional automotive transport networks for PSA Peugeot Citroën.</li>
+                    </ul>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Strategic Planning Analyst</h3>
+                        <span class="tag-data">2004 - 2007</span>
+                    </div>
+                    <p class="empresa-nome">National Institute of Metrology, Quality and Technology (INMETRO)</p>
+                    <p class="texto-descricao">
+                        Deployed and structured Strategic Planning methodologies across multiple institutional directorates and regional state organs (IPEMs). Managed corporate project portfolios and engineered structural performance frameworks based on Project Management, Process Management, and Balanced Scorecard (BSC) frameworks.
+                    </p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Financial & Sectorial Indices Analyst</h3>
+                        <span class="tag-data">2002 - 2004</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV)</p>
+                    <ul class="lista-bullets">
+                        <li>Conducted extensive corporate financial evaluations and balance sheet analysis of listed major Brazilian joint-stock corporations (S.A.). Managed calculations and data dissemination for the financial market index <strong>FGV 100</strong>.</li>
+                        <li>Operational Coordinator for the Consumer Expectations Survey and core team member for the Manufacturing Business Tendency Survey.</li>
+                        <li>Authored descriptive analyses for national sectorial cost benchmarks (CUB - Basic Unit Cost, Road Construction Indices, and Public Works Indexes).</li>
                     </ul>
                 </div>
             </div>
-        </div>
 
+            <div>
+                <h2 class="titulo-bloco">Education</h2>
+                
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">M.Sc. in Business Economics and Finance</h3>
+                        <span class="tag-data">2014</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV-EPGE/IBRE)</p>
+                    <p class="texto-descricao" style="font-size: 0.85rem; color: #a6a6a6;">
+                        <strong>Thesis:</strong> "Non-Inflationary Rate of Capacity Utilization: An Approach Using Brazilian Microdata" <br>
+                        Developed three metrics (Survey, Coincident, and Antecedent NIRCU) using industrial microdata from IBRE/FGV to trace price pressure thresholds. Comparative testing against classical output gaps using OLS (MQO) frameworks.
+                    </p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">MBA in Corporate Management and Finance</h3>
+                        <span class="tag-data">2002</span>
+                    </div>
+                    <p class="empresa-nome">Getulio Vargas Foundation (FGV)</p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Postgraduate Specialization in Economic Engineering</h3>
+                        <span class="tag-data">2000</span>
+                    </div>
+                    <p class="empresa-nome">State University of Rio de Janeiro (UERJ)</p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Bachelor of Science in Economics</h3>
+                        <span class="tag-data">1999</span>
+                    </div>
+                    <p class="empresa-nome">Federal University of Rio de Janeiro (UFRJ) — IE Praia Vermelha</p>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">Selected Peer-Reviewed Publications</h3>
+                        <span class="tag-data">Academic Journals</span>
+                    </div>
+                    <p class="empresa-nome">Applied Economics Journal (Qualis-CAPES A3)</p>
+                    <ul class="lista-bullets">
+                        <li><strong>BEZERRA, Itaiguara</strong>. <i>Índice de Incerteza Empresarial: Uma Abordagem usando Microdados de Sondagens</i>. v. 21, no. 4, pp. 659-679, 2017.</li>
+                        <li><strong>BEZERRA, Itaiguara</strong>; MALGARINI, Marco. <i>A new measure of the non-inflationary rate of capacity utilisation for the brazilian economy</i>. v. 20, no. 4, pp. 441-454, 2016.</li>
+                    </ul>
+                </div>
+
+                <div class="item-experiencia">
+                    <div class="linha-topo-item">
+                        <h3 class="cargo-titulo">International Conferences & Congresses</h3>
+                        <span class="tag-data">CIRET</span>
+                    </div>
+                    <p class="texto-descricao">
+                        Active participation and presentation of scientific developments regarding business cycles, macroeconomic structural trends, and capacity utilization measurements built on corporate survey microdata at the <strong>CIRET Conference (Centre for International Research on Economic Tendency Surveys)</strong>.
+                    </p>
+                </div>
+
+                <h2 class="titulo-bloco" style="margin-top: 50px;">Technical Core & Data Portfolio</h2>
+                
+                <div style="font-size: 0.92rem; color: #b3b3b3;">
+                    <p style="margin: 0 0 20px 0; text-align: justify;">
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Advanced Statistical Programming & ML (Python & R):</strong> 
+                        End-to-end processing pipelines built inside VS Code using Python and R ecosystems. Advanced domain in structural Feature Engineering for non-stationary macroeconomic indicators. Specialized deployment of non-linear Machine Learning tree architectures (XGBoost) for structural business cycle classifications and credit risk defaults, completely integrated with SHAP Values for strict economic interpretability and boundary mapping.
+                    </p>
+                    
+                    <p style="margin: 0 0 20px 0; text-align: justify;">
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Macro-Econometric Modeling:</strong> 
+                        Estimation of stochastic structural break models and multi-regime transitions using Markov-Switching architectures (MSIAH specifications in statsmodels/EViews). Robust diagnostic processing of Vector Error Correction Models (VECM), Vector Autoregressions (VAR), and structural time series analysis applied to long-run capital equilibrium and macro-financial variables.
+                    </p>
+                    
+                    <p style="margin: 0 0 20px 0; text-align: justify;">
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Statistical Software & Analytics Environment:</strong> 
+                        Advanced deployment in Python, R, STATA, EViews, and OxMetrics (STAMP module). Deep operational framework in complex spreadsheet architecture (Excel) applied to institutional reporting.
+                    </p>
+
+                    <p style="margin: 0;">
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Languages:</strong> 
+                        Fluent English (academic publishing and conference level) | Intermediate Spanish.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </body>
