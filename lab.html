@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab | Itaiguara Bezerra</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b1219;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px 8%;
+        }
+
+        /* Menu Superior Simétrico */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 80px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.7;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: #c5a880;
+        }
+
+        nav span {
+            color: #ffffff;
+            opacity: 0.3;
+        }
+
+        /* Estrutura do Conteúdo */
+        .container {
+            max-width: 800px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c5a880;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        /* Divisor Simples */
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 40px 0;
+        }
+
+        /* Placeholder para os Cards de Exercícios Futuros */
+        .grid-placeholder {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card-dummy {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            padding: 24px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegação Superior Unificada -->
+    <nav>
+        <a href="index.html">HOME</a> <span>|</span>
+        <a href="about.html">ABOUT ME</a> <span>|</span>
+        <a href="lab.html" class="active">LAB</a> <span>|</span>
+        <a href="projects.html">PROJECTS</a> <span>|</span>
+        <a href="resume.html">RESUME</a> <span>|</span>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <!-- Apresentação do Lab -->
+    <div class="container">
+        <h1 class="section-title">Lab</h1>
+        <h2 class="section-subtitle">Where Economic Theory Meets Machine Learning</h2>
+        
+        <p class="section-text">
+            Welcome to my Macroeconomic Sandbox. This space serves as a dynamic testing ground for proof-of-concept exercises, designed to demonstrate the practical synergy between classical econometrics and machine learning algorithms.
+        </p>
+        
+        <p class="section-text">
+            Here, you will find agile, code-driven solutions applied to real-time market anomalies, sentiment indexes, and high-frequency financial data. The goal of the Lab is simple: to translate complex data structures into immediate, actionable macroeconomic insights through transparent and reproducible code.
+        </p>
+
+        <hr>
+
+        <!-- Sandbox Ativa (Sinalizando que a bancada de códigos vai aqui embaixo) -->
+        <div class="grid-placeholder">
+            <div class="card-dummy">[ Code-driven Exercise Setup ]</div>
+            <div class="card-dummy">[ Dynamic Signal Testing ]</div>
+        </div>
+    </div>
+
+</body>
+</html>
