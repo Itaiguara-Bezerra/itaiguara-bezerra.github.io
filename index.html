@@ -103,8 +103,15 @@
             margin-bottom: 40px;
         }
 
-        /* Botão estilizado [VIEW DETAILED PORTFOLIO] */
-        .btn-portfolio {
+        /* Grupo de Botões Alinhados */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Botões Estilizados Base */
+        .btn-portfolio, .btn-lab {
             display: inline-block;
             padding: 14px 28px;
             background: linear-gradient(180deg, #16222f 0%, #0d1620 100%);
@@ -114,15 +121,29 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            border: 2px solid #4a6175;
             border-radius: 4px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
+        .btn-portfolio {
+            border: 2px solid #4a6175;
+        }
+
         .btn-portfolio:hover {
             border-color: #c5a880;
             box-shadow: 0px 4px 20px rgba(197, 168, 128, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-lab {
+            border: 2px solid #c5a880;
+            color: #c5a880;
+        }
+
+        .btn-lab:hover {
+            background: linear-gradient(180deg, #1d2b3a 0%, #131f2c 100%);
+            box-shadow: 0px 4px 20px rgba(197, 168, 128, 0.4);
             transform: translateY(-1px);
         }
 
@@ -160,13 +181,16 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: 40px;
-                padding-top: 100px;
+                padding-top: 120px;
                 height: auto;
                 min-height: 100vh;
             }
             .content-block {
                 max-width: 100%;
                 text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
             }
             .chart-container {
                 width: 100%;
@@ -184,20 +208,24 @@
 <body>
 
     <div class="hero-viewport">
-        <!-- Menu de Navegação Superior Integrado -->
+        <!-- Menu de Navegação Superior Integrado com a seção LAB adicionada -->
         <nav>
             <a href="index.html" class="active">HOME</a> <span>|</span>
             <a href="about.html">ABOUT ME</a> <span>|</span>
+            <a href="lab.html">LAB</a> <span>|</span>
             <a href="projects.html">PROJECTS</a> <span>|</span>
             <a href="resume.html">RESUME</a> <span>|</span>
             <a href="contact.html">CONTACT</a>
         </nav>
 
-        <!-- Lado Esquerdo: Identidade Institucional -->
+        <!-- Lado Esquerdo: Identidade Institucional e Chamadas de Ação Duplas -->
         <div class="content-block">
             <h1>Itaiguara Bezerra</h1>
             <h2>Senior Economist | Data Economist</h2>
-            <a href="projects.html" class="btn-portfolio">[View Detailed Portfolio]</a>
+            <div class="btn-group">
+                <a href="projects.html" class="btn-portfolio">[View Projects]</a>
+                <a href="lab.html" class="btn-lab">[Enter the Lab]</a>
+            </div>
         </div>
 
         <!-- Lado Direito: Gráfico Interativo com Link Direto para a página de Projetos -->
