@@ -27,7 +27,7 @@
             font-size: 0.9rem;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
 
         nav a {
@@ -48,9 +48,29 @@
             opacity: 0.3;
         }
 
+        /* Discrete Back Button */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: #c5a880;
+        }
+
         /* Estrutura do Conteúdo */
         .container {
-            max-width: 800px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .section-title {
@@ -82,30 +102,128 @@
             border: 0;
             height: 1px;
             background: rgba(255, 255, 255, 0.1);
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
-        /* Placeholder para os Modelos Macroeconômicos Estruturais */
-        .structural-placeholder {
+        /* Feed Real de Projetos Estruturais */
+        .structural-container {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 35px;
             margin-top: 40px;
         }
 
-        .project-block-dummy {
-            background: rgba(255, 255, 255, 0.02);
+        .projeto-item {
+            background: rgba(255, 255, 255, 0.01);
             border-left: 3px solid #4a6175;
-            padding: 30px;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 0 4px 4px 0;
+            padding: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .projeto-item:hover {
+            border-left-color: #c5a880;
+            background: rgba(255, 255, 255, 0.02);
+            transform: translateX(2px);
+        }
+
+        .linha-topo-projeto {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .projeto-titulo {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
+
+        .tag-metodologia {
+            font-size: 0.75rem;
+            color: #c5a880;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            border: 1px solid rgba(197, 168, 128, 0.4);
+            padding: 3px 10px;
+            border-radius: 3px;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            background: rgba(197, 168, 128, 0.05);
+        }
+
+        .projeto-descricao {
+            font-size: 1rem;
+            color: #b3b3b3;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0 0 20px 0;
+        }
+
+        .subtitulo-tecnico {
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .lista-tecnica {
+            margin: 0 0 25px 0;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: #b3b3b3;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .lista-tecnica li {
+            margin-bottom: 6px;
+        }
+
+        .btn-codigo {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #4a6175;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-codigo:hover {
+            background-color: #c5a880;
+            border-color: #c5a880;
+            color: #0b1219;
+        }
+
+        @media (max-width: 768px) {
+            .linha-topo-projeto {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navegação Superior Unificada e Corrigida -->
     <nav>
         <a href="index.html">HOME</a> <span>|</span>
         <a href="about.html">ABOUT ME</a> <span>|</span>
@@ -116,6 +234,14 @@
     </nav>
 
     <div class="container">
+        
+        <!-- Botão Discreto de Voltar -->
+        <a href="index.html" class="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            BACK TO HOME
+        </a>
+
+        <!-- Apresentação Institucional Comedida -->
         <h1 class="section-title">Projects</h1>
         <h2 class="section-subtitle">Advanced Research in Applied Macroeconomics</h2>
         
@@ -129,8 +255,81 @@
 
         <hr>
 
-        <div class="structural-placeholder">
-            <div class="project-block-dummy">[ Structural Macroeconomic Research Model ]</div>
+        <!-- Feed Ativo dos Seus 4 Projetos Históricos Reais -->
+        <div class="structural-container">
+            
+            <!-- Projeto 1: The Brazilian GDP in Black and White -->
+            <div class="projeto-item">
+                <div class="linha-topo-projeto">
+                    <h2 class="projeto-titulo">The Brazilian GDP in Black and White</h2>
+                    <span class="tag-metodologia">Markov-Switching (3 Regimes)</span>
+                </div>
+                <p class="projeto-descricao">
+                    An advanced expansion of multi-regime time series modeling designed to capture higher structural complexity by adding an intermediate transition state, isolating volatile structural breaks from persistent economic trends.
+                </p>
+                <div class="subtitulo-tecnico">Core Technical Framework:</div>
+                <ul class="lista-tecnica">
+                    <li><strong>Stochastic Granularity:</strong> Implementation of a 3-state Markovian regime architecture to separate extreme shocks from standard cyclical movements.</li>
+                    <li><strong>Convergence Tracking:</strong> Advanced tracking of filtered and smoothed probabilities to identify exact structural break dates across historical series.</li>
+                    <li><strong>Rigor Validation:</strong> Multi-language replication check to prevent mathematical convergence failures and ensure robust parameter identification.</li>
+                </ul>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/Brazilian-GDP-Inertia" target="_blank" class="btn-codigo">View Project Folder</a>
+            </div>
+
+            <!-- Projeto 2: Beyond the Average: Brazilian Inertia -->
+            <div class="projeto-item">
+                <div class="linha-topo-projeto">
+                    <h2 class="projeto-titulo">Beyond the Average: Brazilian Inertia</h2>
+                    <span class="tag-metodologia">Markov-Switching (2 Regimes)</span>
+                </div>
+                <p class="projeto-descricao">
+                    A mathematical and statistical framework built to identify unobserved states and calculate conditional transition probabilities across macroeconomic regimes, mapping structural shifts without pre-defining the break-points dates.
+                </p>
+                <div class="subtitulo-tecnico">Core Technical Framework:</div>
+                <ul class="lista-tecnica">
+                    <li><strong>Regime Isolation:</strong> Estimation of stochastic Markov-Switching pipelines to isolate binary states (expansion vs. contraction) inside time-varying economic indicators.</li>
+                    <li><strong>Matrix Calculations:</strong> Computational modeling of conditional transition probability matrices to trace structural convergence speeds.</li>
+                    <li><strong>Model Auditing:</strong> Strict data preparation and parameter constraints designed to avoid parameter overfitting and stabilize maximum likelihood estimations.</li>
+                </ul>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/Markov-Switching-GDP" target="_blank" class="btn-codigo">View Project Folder</a>
+            </div>
+
+            <!-- Projeto 3: Energy Consumption: Forecasting using SARIMAX -->
+            <div class="projeto-item">
+                <div class="linha-topo-projeto">
+                    <h2 class="projeto-titulo">Energy Consumption: Forecasting using SARIMAX</h2>
+                    <span class="tag-metodologia">SARIMAX Pipelines</span>
+                </div>
+                <p class="projeto-descricao">
+                    A robust structural time series pipeline engineered to capture and project seasonal consumption variations inside sectorial infrastructure tracking. The framework mitigates predictive drift by embedding high-frequency external exogenous covariates directly into the forecasting engine.
+                </p>
+                <div class="subtitulo-tecnico">Core Technical Framework:</div>
+                <ul class="lista-tecnica">
+                    <li><strong>Stochastic Framework:</strong> Full deployment of SARIMAX architectures optimized to capture long-run seasonal dependencies alongside short-term structural corrections.</li>
+                    <li><strong>Feature Engineering:</strong> Integration of dynamic exogenous variables (macroeconomic activity proxies and temperature variables) to constrain error bounds.</li>
+                    <li><strong>Validation Strategy:</strong> Implementation of independent statistical diagnostics (residuals autocorrelation, heteroskedasticity testing, and parameters stability audits).</li>
+                </ul>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/SARIMAX_Energy_Forecast" target="_blank" class="btn-codigo">View Project Folder</a>
+            </div>
+
+            <!-- Projeto 4: Geopolitical Oil Impact -->
+            <div class="projeto-item">
+                <div class="linha-topo-projeto">
+                    <h2 class="projeto-titulo">Geopolitical Oil Impact</h2>
+                    <span class="tag-metodologia">Quantitative Econometrics</span>
+                </div>
+                <p class="projeto-descricao">
+                    An applied econometric study designed to measure the structural transmission mechanisms of global geopolitical shocks onto international commodity prices. The project focuses on isolating structural parameters and identifying pricing boundaries during volatile market corrections.
+                </p>
+                <div class="subtitulo-tecnico">Core Technical Framework:</div>
+                <ul class="lista-tecnica">
+                    <li><strong>Data Ingestion & Integrity:</strong> Development of structured data ingestion pipelines tailored to process non-stationary global pricing series and volatility proxies.</li>
+                    <li><strong>Empirical Rigor:</strong> Implementation of formal econometric testing to ensure statistical significance and filter seasonal noise from systemic geopolitical adjustments.</li>
+                    <li><strong>Theoretical Alignment:</strong> Results mapped and validated to avoid black-box anomalies, ensuring output parameters strictly align with classical trade and microeconomic theories.</li>
+                </ul>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/Geopolitical_Oil_Impact" target="_blank" class="btn-codigo">View Project Folder</a>
+            </div>
+
         </div>
     </div>
 
