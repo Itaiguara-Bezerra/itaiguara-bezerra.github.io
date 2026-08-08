@@ -1,189 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Itaiguara Bezerra</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+```html
+<style>
+    body {
+        background-color: #0b0f12;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        line-height: 1.6;
+        padding: 60px 8% 80px 8%;
+    }
 
-        body {
-            background-color: #0b0f12;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 60px 8% 80px 8%;
-        }
+    /* Cabeçalho Técnico (Identidade Visual Unificada) */
+    header {
+        max-width: 850px;
+        margin: 0 auto 40px auto;
+        position: relative;
+    }
 
-        /* Cabeçalho Técnico (Identidade Visual Unificada) */
-        header {
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            position: relative;
-        }
+    .navbar-about {
+        position: relative;
+        padding: 10px 0 30px 0;
+        text-align: right;
+        z-index: 100;
+    }
 
-        .navbar-about {
-            position: relative;
-            padding: 10px 0 30px 0;
-            text-align: right;
-            z-index: 100;
-        }
+    .navbar-about a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+    }
 
-        .navbar-about a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-left: 25px;
-            transition: color 0.3s ease;
-        }
+    .navbar-about a:hover, .navbar-about a.active {
+        color: #c5a880;
+    }
 
-        .navbar-about a:hover, .navbar-about a.active {
-            color: #c5a880;
-        }
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ffffff;
+        border-bottom: 2px solid #232e3c;
+        padding-bottom: 15px;
+        margin-top: 20px;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-            border-bottom: 2px solid #232e3c;
-            padding-bottom: 15px;
-            margin-top: 20px;
-        }
+    /* Container do Conteúdo */
+    .content-container {
+        max-width: 850px;
+        margin: 0 auto;
+        background-color: #131a22;
+        border: 1px solid #232e3c;
+        border-radius: 6px;
+        padding: 40px;
+    }
 
-        /* Container do Conteúdo */
-        .content-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background-color: #131a22;
-            border: 1px solid #232e3c;
-            border-radius: 6px;
-            padding: 40px;
-        }
+    .profile-section h2 {
+        font-size: 1.3rem;
+        color: #c5a880;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 35px 0 15px 0;
+    }
 
-        .profile-section h2 {
-            font-size: 1.3rem;
-            color: #c5a880;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 35px 0 15px 0;
-        }
+    .profile-section h2:first-of-type {
+        margin-top: 0;
+    }
 
-        .profile-section h2:first-of-type {
-            margin-top: 0;
-        }
+    .profile-section p {
+        font-size: 1.05rem;
+        color: #d1d5db;
+        text-align: justify;
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
 
-        .profile-section p {
-            font-size: 1.05rem;
-            color: #d1d5db;
-            text-align: justify;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
+    /* Bloco do Manifesto Pessoal */
+    .manifesto-block {
+        background-color: #0b0f12;
+        border-left: 3px solid #c5a880;
+        padding: 25px;
+        margin: 25px 0;
+        border-radius: 0 4px 4px 0;
+    }
 
-        /* Bloco do Manifesto Pessoal */
-        .manifesto-block {
-            background-color: #0b0f12;
-            border-left: 3px solid #c5a880;
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 0 4px 4px 0;
-        }
+    .manifesto-block p {
+        font-size: 1.05rem;
+        color: #e5e7eb;
+        line-height: 1.8;
+        text-align: justify;
+        font-style: italic;
+    }
 
-        .manifesto-block p {
-            font-size: 1.05rem;
-            color: #e5e7eb;
-            line-height: 1.8;
-            text-align: justify;
-            font-style: italic;
-        }
+    .highlight-text {
+        color: #c5a880;
+        font-weight: 600;
+    }
+    
+    .btn-back-home {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #b3b3b3;
+        text-decoration: none;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        transition: color 0.2s ease;
+    }
 
-        .highlight-text {
-            color: #c5a880;
-            font-weight: 600;
-        }
+    .btn-back-home:hover {
+        color: #c5a880;
+    }
+</style>
+
+<header>
+    <nav class="navbar-about">
+        <a href="index.html">HOME</a> <span>|</span>
+        <a href="about.html" class="active">ABOUT ME</a> <span>|</span>
+        <a href="lab.html">LAB</a> <span>|</span>
+        <a href="projects.html">PROJECTS</a> <span>|</span>
+        <a href="resume.html">RESUME</a> <span>|</span>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+    
+    <a href="index.html" class="btn-back-home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+    </a>
+
+    <h1>About Me</h1>
+</header>
+
+<main class="content-container">
+    <section class="profile-section">
         
-        .btn-back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #b3b3b3;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            transition: color 0.2s ease;
-        }
+        <h2>Economic Expertise, Technologically Expanded</h2>
 
-        .btn-back-home:hover {
-            color: #c5a880;
-        }
-    </style>
-</head>
-<body>
+        <p>
+            Hi, I’m Itaiguara Bezerra. I am a 
+            <span class="highlight-text">Senior Quantitative Economist</span> 
+            holding an MSc from the 
+            <span class="highlight-text">Getulio Vargas Foundation (FGV-EPGE)</span>.
+        </p>
 
-    <header>
-        <nav class="navbar-about">
-            <a href="index.html">HOME</a> <span>|</span>
-            <a href="about.html" class="active">ABOUT ME</a> <span>|</span>
-            <a href="lab.html">LAB</a> <span>|</span>
-            <a href="projects.html">PROJECTS</a> <span>|</span>
-            <a href="resume.html">RESUME</a> <span>|</span>
-            <a href="contact.html">CONTACT</a>
-        </nav>
-        
-        <a href="index.html" class="btn-back-home">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Home
-        </a>
-        <h1>About Me</h1>
-    </header>
+        <p>
+            Throughout my career, I have navigated complex macroeconomic cycles, 
+            modeled economic and financial indicators, and developed a deep understanding 
+            of market realities. I chose to expand my analytical boundaries not by 
+            abandoning my economic foundations, but by deliberately 
+            <span class="highlight-text">expanding my analytical toolkit</span>.
+        </p>
 
-    <main class="content-container">
-        <section class="profile-section">
-            
-            <h2>Sophistication of Expertise</h2>
+        <p>
+            By integrating statistical programming ecosystems such as Python and R 
+            into my macroeconomic framework, I have translated decades of economic 
+            experience and intuition into scalable quantitative analysis. This allows 
+            me to focus on what transforms data into meaningful economic insight: 
+            <span class="highlight-text">structural economic logic, mathematical discipline, 
+            and model interpretability</span>.
+        </p>
+
+
+        <h2>Bridging Economics and Modern Data Science</h2>
+
+        <p>
+            My professional approach is grounded in the belief that modern computational 
+            methods should complement, rather than replace, established economic reasoning. 
+            Econometric methods and Machine Learning offer powerful tools for exploring 
+            complex economic relationships, but their usefulness ultimately depends on 
+            whether their results remain economically meaningful and interpretable.
+        </p>
+
+        <div class="manifesto-block">
             <p>
-                Hi, I’m Itaiguara Bezerra. I am a <span class="highlight-text">Senior Quantitative Economist</span> holding an MSc from the prestigious <span class="highlight-text">Getulio Vargas Foundation (FGV-EPGE)</span>. 
+                "A machine learning model that performs exceptionally well statistically 
+                but remains economically silent can be of limited value for institutional 
+                decision-making."
             </p>
-            <p>
-                Throughout my career, I have navigated complex macroeconomic cycles, modeled high-stakes indicators, and deeply understood market realities. In an industry that frequently prioritizes superficial tech trends over deep structural knowledge, I chose to expand my boundaries not by abandoning my foundations, but by executing a deliberate <span class="highlight-text">technological sophistication of my analytical core</span>.
-            </p>
-            <p>
-                By integrating modern statistical programming ecosystems like Python and R directly into my macroeconomic framework, I translated decades of economic intuition into scalable computation. Leveraging cutting-edge workflows allows me to bypass repetitive data-wrangling pipelines and focus strictly on what transforms data into strategy: structural economic logic, mathematical constraints, and model interpretability.
-            </p>
+        </div>
 
-            <h2>Bridging the Dangerous Gap</h2>
-            <p>
-                This professional pivot stems from a clear diagnosis of a critical flaw in the market. Today, a dangerous disconnect exists within industry analytics. On one side, classical macroeconomists manually process rigid models; on the other, data scientists deploy massive, unconstrained Machine Learning architectures completely detached from real-world logic.
-            </p>
 
-            <div class="manifesto-block">
-                <p>
-                    "Too often, data pipelines are designed solely to optimize arbitrary error metrics like RMSE, while completely ignoring economic plausibility. A machine learning model that is statistically flawless but economically silent is structurally useless for institutional decision-making."
-                </p>
-            </div>
+        <h2>Quantitative Practice &amp; Philosophy</h2>
 
-            <h2>Quantitative Practice & Philosophy</h2>
-            <p>
-                To bridge this technical divide, I define my applied approach as that of a <span class="highlight-text">Data Economist</span>—an economist who leverages code and quantitative methodologies as native extensions of economic theory. My objective is to ensure that advanced algorithmic frameworks, tree-based models, and dynamic econometric architectures remain strictly guided and constrained by macroeconomic reality.
-            </p>
-            <p>
-                This platform documents a rigorous repository of applied macroeconomic, econometric, and non-linear data science exercises. It serves as tangible proof that technical integrity, mathematical discipline, and a commitment to constant professional evolution are assets that only grow more robust with experience.
-            </p>
+        <p>
+            To bridge this methodological divide, I define my applied approach as that of a 
+            <span class="highlight-text">Data Economist</span> — an economist who uses code 
+            and quantitative methodologies as natural extensions of economic theory. My 
+            objective is to ensure that advanced algorithmic frameworks, tree-based models, 
+            and dynamic econometric architectures remain guided by economic reasoning and 
+            grounded in the institutional and macroeconomic realities of the problems they 
+            are designed to address.
+        </p>
 
-        </section>
-    </main>
+        <p>
+            This platform documents applied work in macroeconomics, econometrics, and 
+            nonlinear data science. Each project is built around a simple principle: 
+            <span class="highlight-text">the method should serve the economic question, 
+            not the other way around</span>.
+        </p>
 
-</body>
-</html>
+        <p>
+            The work presented here reflects a commitment to technical integrity, 
+            mathematical discipline, interpretability, and continuous professional 
+            evolution — qualities that become more robust with experience.
+        </p>
+
+    </section>
+</main>
+```
