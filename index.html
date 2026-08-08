@@ -43,7 +43,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(11, 18, 25, 0.55);
+            background: rgba(11, 18, 25, 0.65);
             z-index: 1;
         }
 
@@ -158,10 +158,10 @@
         }
 
         .showcase-card {
-            background-color: rgba(11, 15, 18, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background-color: rgba(11, 15, 18, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 6px;
-            padding: 14px;
+            padding: 16px;
             text-decoration: none;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
             transition: all 0.3s ease;
@@ -174,6 +174,7 @@
             border-color: #c5a880;
             transform: translateY(-3px);
             box-shadow: 0px 12px 35px rgba(197, 168, 128, 0.25);
+            background-color: rgba(15, 21, 26, 0.95);
         }
 
         .card-tag {
@@ -182,7 +183,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 10px;
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 3px;
             display: inline-block;
         }
@@ -194,47 +195,54 @@
         }
 
         .tag-projects {
-            color: #4a6175;
-            background: rgba(74, 97, 117, 0.2);
-            border: 1px solid rgba(74, 97, 117, 0.4);
+            color: #8faec9;
+            background: rgba(74, 97, 117, 0.25);
+            border: 1px solid rgba(143, 174, 201, 0.4);
         }
 
-        /* Proporção 16:9 Padronizada */
+        /* Proporção 16:9 Padronizada com Exibição Perfeita sem Cortes */
         .card-image-wrapper {
             width: 100%;
             aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 4px;
-            margin-bottom: 10px;
-            background: #080c0e;
+            margin-bottom: 12px;
+            background: #06090c;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 4px;
         }
 
         .card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Exibe o gráfico inteiro sem cortes */
+            opacity: 0.9;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .showcase-card:hover .card-image-wrapper img {
             opacity: 1;
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .card-label-title {
-            color: #e0e0e0;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 0;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             text-align: center;
-            padding-top: 4px;
+        }
+
+        .card-label-sub {
+            color: #c5a880;
+            font-size: 0.75rem;
+            text-align: center;
+            opacity: 0.8;
         }
 
         @media (max-width: 1100px) {
@@ -290,17 +298,17 @@
         <!-- Lado Direito: Grid de Cartões -->
         <div class="chart-grid-container">
             
-            <!-- FIGURA 1: LAB (Biplot do VIX I) -->
+            <!-- FIGURA 1: LAB (Biplot do PCA) -->
             <a href="lab.html" class="showcase-card" title="Click to enter the Quantitative Lab">
                 <div>
                     <span class="card-tag tag-lab">LAB</span>
                     <div class="card-image-wrapper">
-                        <!-- Certifique-se de usar o nome correto da imagem no seu repositório -->
-                        <img src="vix_biplot_preview.png" alt="Quantitative Lab">
+                        <img src="biplot_pca_en.png" alt="PCA Biplot - Latent Factor Stress">
                     </div>
                 </div>
                 <div>
                     <h3 class="card-label-title">Quantitative Lab</h3>
+                    <p class="card-label-sub">PCA Biplot & Regularized Models</p>
                 </div>
             </a>
 
@@ -309,11 +317,12 @@
                 <div>
                     <span class="card-tag tag-projects">PROJECTS</span>
                     <div class="card-image-wrapper">
-                        <img src="xgboost_semaforo_economico_en.png" alt="Applied Projects">
+                        <img src="xgboost_semaforo_economico_en.png" alt="Applied Macroeconomic Projects">
                     </div>
                 </div>
                 <div>
                     <h3 class="card-label-title">Applied Projects</h3>
+                    <p class="card-label-sub">Macroeconomic Decision Frameworks</p>
                 </div>
             </a>
 
