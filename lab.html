@@ -91,6 +91,7 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 40px;
+            margin-bottom: 40px; /* Espaço para o botão Back Home */
         }
 
         .card-dummy {
@@ -103,6 +104,27 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
+        }
+
+        /* Botão Back Home */
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            color: #c5a880;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid #c5a880;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #c5a880;
+            color: #0b1219;
         }
     </style>
 </head>
@@ -133,11 +155,14 @@
 
         <hr>
 
-        <!-- Sandbox Ativa (Sinalizando que a bancada de códigos vai aqui embaixo) -->
+        <!-- Sandbox Ativa -->
         <div class="grid-placeholder">
             <div class="card-dummy">[ Code-driven Exercise Setup ]</div>
             <div class="card-dummy">[ Dynamic Signal Testing ]</div>
         </div>
+
+        <!-- Botão Back Home -->
+        <a href="index.html" class="btn-back">← Back to Home</a>
     </div>
 
 </body>
