@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab | Itaiguara Bezerra</title>
+
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +21,7 @@
             padding: 40px 8%;
         }
 
-        /* Menu Superior Simétrico */
+        /* --- TOP NAVIGATION --- */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -38,7 +40,8 @@
             transition: all 0.2s ease;
         }
 
-        nav a:hover, nav a.active {
+        nav a:hover,
+        nav a.active {
             opacity: 1;
             color: #c5a880;
         }
@@ -48,12 +51,12 @@
             opacity: 0.3;
         }
 
-        /* Estrutura do Conteúdo */
+        /* --- MAIN CONTENT --- */
         .container {
             max-width: 900px;
         }
 
-        /* Link Back to Home no Topo */
+        /* --- BACK TO HOME --- */
         .back-home {
             display: inline-block;
             color: #ffffff;
@@ -72,6 +75,7 @@
             color: #c5a880;
         }
 
+        /* --- SECTION HEADINGS --- */
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -96,7 +100,7 @@
             text-align: justify;
         }
 
-        /* Author's Note Box */
+        /* --- AUTHOR'S NOTE --- */
         .author-note {
             background: rgba(197, 168, 128, 0.05);
             border-left: 3px solid #c5a880;
@@ -112,7 +116,7 @@
             font-style: normal;
         }
 
-        /* --- ARVORE METODOLOGICA (CSS NATIVO) --- */
+        /* --- METHODOLOGICAL TREE --- */
         .tree-container {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -245,10 +249,10 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* --- TABELA DE LENTES --- */
+        /* --- METHODOLOGICAL COMPARISON TABLE --- */
         .table-container {
             overflow-x: auto;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         table {
@@ -286,7 +290,20 @@
             color: #c5a880;
         }
 
-        /* Divisores */
+        /* --- PHILOSOPHY NOTE --- */
+        .philosophy-note {
+            border-left: 3px solid rgba(197, 168, 128, 0.55);
+            padding: 15px 20px;
+            margin: 10px 0 50px 0;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .philosophy-note strong {
+            color: #c5a880;
+        }
+
+        /* --- DIVIDER --- */
         hr {
             border: 0;
             height: 1px;
@@ -294,7 +311,7 @@
             margin: 40px 0;
         }
 
-        /* Cards do Lab */
+        /* --- LAB CARDS --- */
         .grid-placeholder {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -334,86 +351,178 @@
             margin-bottom: 20px;
         }
 
-        /* Responsividade */
+        /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
+
+            body {
+                padding: 30px 6%;
+            }
+
+            nav {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .tree-branches {
                 flex-direction: column;
                 gap: 20px;
             }
-            .tree-branches::before, .tree-node::before, .tree-root::after {
+
+            .tree-branches::before,
+            .tree-node::before,
+            .tree-root::after {
                 display: none;
+            }
+
+            .table-container {
+                margin-left: -5px;
+                margin-right: -5px;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Navegação Superior Unificada -->
+    <!-- Top Navigation -->
     <nav>
-        <a href="index.html">HOME</a> <span>|</span>
-        <a href="about.html">ABOUT ME</a> <span>|</span>
-        <a href="lab.html" class="active">LAB</a> <span>|</span>
-        <a href="projects.html">PROJECTS</a> <span>|</span>
-        <a href="resume.html">RESUME</a> <span>|</span>
+        <a href="index.html">HOME</a>
+        <span>|</span>
+        <a href="about.html">ABOUT ME</a>
+        <span>|</span>
+        <a href="lab.html" class="active">LAB</a>
+        <span>|</span>
+        <a href="projects.html">PROJECTS</a>
+        <span>|</span>
+        <a href="resume.html">RESUME</a>
+        <span>|</span>
         <a href="contact.html">CONTACT</a>
     </nav>
 
-    <!-- Conteúdo Principal -->
+    <!-- Main Content -->
     <div class="container">
-        <!-- Link de Retorno Minimalista no Topo -->
+
+        <!-- Back to Home -->
         <a href="index.html" class="back-home">&larr; BACK TO HOME</a>
 
         <h1 class="section-title">Lab</h1>
-        <h2 class="section-subtitle">Where Economic Theory Meets Machine Learning</h2>
-        
+
+        <h2 class="section-subtitle">
+            Where Economic Theory Meets Machine Learning
+        </h2>
+
         <p class="section-text">
-            Welcome to my Macroeconomic Sandbox. This space serves as a dynamic testing ground for proof-of-concept exercises, designed to demonstrate the practical synergy between classical econometrics and machine learning algorithms.
+            Welcome to my Macroeconomic Sandbox. This space serves as a dynamic
+            testing ground for applied exercises that explore the practical
+            complementarity between classical econometrics and modern machine
+            learning methods.
         </p>
 
-        <!-- Dynamic Research Framework Header -->
-        <h2 class="section-subtitle" style="margin-top: 40px;">VIX Tupiniquim: A Modern Quantitative Framework for Measuring Brazilian Financial Stress</h2>
+        <!-- VIX FRAMEWORK -->
+        <h2 class="section-subtitle" style="margin-top: 40px;">
+            VIX Tupiniquim: A Modern Quantitative Framework for Measuring Brazilian Financial Stress
+        </h2>
 
-        <!-- Author's Note -->
+        <!-- AUTHOR'S NOTE -->
         <div class="author-note">
-            <strong>Author's Note:</strong> The term <em>"Tupiniquim"</em> is intentionally preserved as a Brazilian cultural expression used to denote something uniquely national. Throughout this project, it serves as the original brand identifier for a family of financial stress metrics specifically designed for the institutional, macroeconomic, and financial dynamics of Brazil.
+            <strong>Author's Note:</strong>
+            The term <em>"Tupiniquim"</em> is intentionally preserved as a
+            Brazilian cultural expression associated with something uniquely
+            national. Throughout this project, it serves as the original brand
+            identifier for a family of financial stress indicators designed
+            around the institutional, macroeconomic, and financial dynamics of Brazil.
         </div>
 
-        <!-- ARVORE METODOLOGICA -->
+        <!-- METHODOLOGICAL TREE -->
         <div class="tree-container">
-            <div class="tree-title">Methodological Architecture</div>
-            <div class="tree-root">BRAZILIAN FINANCIAL STRESS ASSESSMENT</div>
-            
+
+            <div class="tree-title">
+                Methodological Architecture
+            </div>
+
+            <div class="tree-root">
+                BRAZILIAN FINANCIAL STRESS ASSESSMENT
+            </div>
+
             <div class="tree-branches">
-                <!-- Nó 1 (Clicável para o Repositório) -->
-                <a href="https://github.com/Itaiguara-Bezerra/vix-tupiniquim-1" target="_blank" class="tree-node active-node">
+
+                <!-- PART I -->
+                <a href="https://github.com/Itaiguara-Bezerra/vix-tupiniquim-1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="tree-node active-node">
+
                     <div class="node-part">Part I</div>
-                    <div class="node-title">Linear Structure & Sparsity</div>
-                    <div class="node-tech">PCA + LASSO</div>
-                    <div class="node-status status-published">→ Access Repo</div>
+
+                    <div class="node-title">
+                        Linear Structure &amp; Regularization
+                    </div>
+
+                    <div class="node-tech">
+                        PCA + LASSO + Ridge + Elastic Net
+                    </div>
+
+                    <div class="node-status status-published">
+                        &rarr; Access Repo
+                    </div>
+
                 </a>
-                
-                <!-- Nó 2 (Em Desenvolvimento) -->
+
+                <!-- PART II -->
                 <div class="tree-node">
+
                     <div class="node-part">Part II</div>
-                    <div class="node-title">Non-Linearity & Explainability</div>
-                    <div class="node-tech">XGBoost + SHAP</div>
-                    <div class="node-status status-progress">[ In Progress ]</div>
+
+                    <div class="node-title">
+                        Non-Linearity &amp; Explainability
+                    </div>
+
+                    <div class="node-tech">
+                        XGBoost + SHAP
+                    </div>
+
+                    <div class="node-status status-progress">
+                        [ In Progress ]
+                    </div>
+
                 </div>
-                
-                <!-- Nó 3 (Futuro) -->
+
+                <!-- PART III -->
                 <div class="tree-node">
+
                     <div class="node-part">Part III</div>
-                    <div class="node-title">Dynamic Parameters & Regime Shifts</div>
-                    <div class="node-tech">TVP-VAR</div>
-                    <div class="node-status status-progress">[ Forthcoming ]</div>
+
+                    <div class="node-title">
+                        Time-Varying Dynamics
+                    </div>
+
+                    <div class="node-tech">
+                        TVP-VAR
+                    </div>
+
+                    <div class="node-status status-progress">
+                        [ Forthcoming ]
+                    </div>
+
                 </div>
+
             </div>
         </div>
 
-        <!-- TABELA DE LENTES COMPARATIVAS -->
-        <h2 class="section-subtitle" style="font-size: 1rem;">Methodological Lenses Comparison</h2>
+        <!-- METHODOLOGICAL LENSES -->
+        <h2 class="section-subtitle" style="font-size: 1rem;">
+            Methodological Lenses Comparison
+        </h2>
+
         <div class="table-container">
+
             <table>
+
                 <thead>
                     <tr>
                         <th>Methodological Lens</th>
@@ -422,60 +531,176 @@
                         <th>Core Contribution</th>
                     </tr>
                 </thead>
+
                 <tbody>
+
+                    <!-- PART I -->
                     <tr>
-                        <td><strong style="color: #c5a880;">Part I: Linear & Sparse</strong></td>
-                        <td>How to condense a vast set of risk indicators into a single parsimonious metric?</td>
-                        <td><code>PCA + LASSO</code></td>
-                        <td>Extracts latent market stress while enforcing sparsity through L1 regularization.</td>
+                        <td>
+                            <strong style="color: #c5a880;">
+                                Part I: Linear &amp; Regularized
+                            </strong>
+                        </td>
+
+                        <td>
+                            How can a broad set of macro-financial indicators
+                            be condensed and selected into a parsimonious
+                            measure of financial stress?
+                        </td>
+
+                        <td>
+                            <code>PCA + LASSO + Ridge + Elastic Net</code>
+                        </td>
+
+                        <td>
+                            Condenses common variation through PCA and applies
+                            linear regularization to promote parsimonious
+                            variable selection and mitigate multicollinearity.
+                        </td>
                     </tr>
+
+                    <!-- PART II -->
                     <tr>
-                        <td><strong style="color: #c5a880;">Part II: Non-Linear</strong></td>
-                        <td>How do non-proportional shocks and threshold effects impact financial stress?</td>
-                        <td><code>XGBoost + SHAP</code></td>
-                        <td>Captures complex interactions without sacrificing economic interpretability.</td>
+                        <td>
+                            <strong style="color: #c5a880;">
+                                Part II: Non-Linear
+                            </strong>
+                        </td>
+
+                        <td>
+                            How do nonlinear relationships and interactions
+                            among risk indicators shape financial stress?
+                        </td>
+
+                        <td>
+                            <code>XGBoost + SHAP</code>
+                        </td>
+
+                        <td>
+                            Captures nonlinear relationships and interactions
+                            while providing an interpretable framework for
+                            understanding variable contributions.
+                        </td>
                     </tr>
+
+                    <!-- PART III -->
                     <tr>
-                        <td><strong style="color: #c5a880;">Part III: Time-Varying</strong></td>
-                        <td>How do structural shifts and changing regimes alter stress propagation over time?</td>
-                        <td><code>TVP-VAR</code></td>
-                        <td>Models dynamic parameter shifts and structural breaks across economic crises.</td>
+                        <td>
+                            <strong style="color: #c5a880;">
+                                Part III: Time-Varying
+                            </strong>
+                        </td>
+
+                        <td>
+                            How do relationships among economic variables
+                            evolve as financial stress changes over time?
+                        </td>
+
+                        <td>
+                            <code>TVP-VAR</code>
+                        </td>
+
+                        <td>
+                            Allows model relationships to evolve over time,
+                            providing a framework for investigating changing
+                            dynamics across different economic conditions.
+                        </td>
                     </tr>
+
                 </tbody>
+
             </table>
+
+        </div>
+
+        <!-- RESEARCH PHILOSOPHY -->
+        <div class="philosophy-note">
+            <strong>Research Perspective:</strong>
+            The objective is not to identify a universally superior model,
+            but to examine how different quantitative lenses reveal different
+            dimensions of the same economic phenomenon.
         </div>
 
         <hr>
 
-        <!-- CARDS DO LAB -->
-        <h2 class="section-subtitle" style="font-size: 1rem;">Sandbox Repositories & Exercises</h2>
+        <!-- LAB REPOSITORIES -->
+        <h2 class="section-subtitle" style="font-size: 1rem;">
+            Sandbox Repositories &amp; Exercises
+        </h2>
+
         <div class="grid-placeholder">
-            <a href="https://github.com/Itaiguara-Bezerra/vix-tupiniquim-1" target="_blank" class="card-lab active-card">
+
+            <!-- VIX I -->
+            <a href="https://github.com/Itaiguara-Bezerra/vix-tupiniquim-1"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="card-lab active-card">
+
                 <div>
-                    <div class="card-title">VIX Tupiniquim I</div>
-                    <div class="card-desc">PCA & Regularized LASSO Pipeline for Brazilian Financial Stress.</div>
+                    <div class="card-title">
+                        VIX Tupiniquim I
+                    </div>
+
+                    <div class="card-desc">
+                        PCA and Linear Regularization
+                        (LASSO, Ridge, and Elastic Net)
+                        for Brazilian Financial Stress.
+                    </div>
                 </div>
-                <div class="node-status status-published" style="align-self: flex-start;">Open Repository &rarr;</div>
+
+                <div class="node-status status-published"
+                     style="align-self: flex-start;">
+                    Open Repository &rarr;
+                </div>
+
             </a>
 
+            <!-- VIX II -->
             <div class="card-lab">
+
                 <div>
-                    <div class="card-title">VIX Tupiniquim II</div>
-                    <div class="card-desc">Non-Linear Stress Modeling via XGBoost & SHAP Values.</div>
+                    <div class="card-title">
+                        VIX Tupiniquim II
+                    </div>
+
+                    <div class="card-desc">
+                        Non-Linear Stress Modeling via
+                        XGBoost &amp; SHAP Values.
+                    </div>
                 </div>
-                <div class="node-status status-progress" style="align-self: flex-start;">[ In Progress ]</div>
+
+                <div class="node-status status-progress"
+                     style="align-self: flex-start;">
+                    [ In Progress ]
+                </div>
+
             </div>
 
+            <!-- VIX III -->
             <div class="card-lab">
+
                 <div>
-                    <div class="card-title">VIX Tupiniquim III</div>
-                    <div class="card-desc">TVP-VAR with Stochastic Volatility for Time-Varying Stress.</div>
+                    <div class="card-title">
+                        VIX Tupiniquim III
+                    </div>
+
+                    <div class="card-desc">
+                        Time-Varying Financial Stress Dynamics
+                        using TVP-VAR.
+                    </div>
                 </div>
-                <div class="node-status status-progress" style="align-self: flex-start;">[ Forthcoming ]</div>
+
+                <div class="node-status status-progress"
+                     style="align-self: flex-start;">
+                    [ Forthcoming ]
+                </div>
+
             </div>
+
         </div>
 
     </div>
 
 </body>
 </html>
+```
