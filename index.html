@@ -218,7 +218,7 @@
         .card-image-wrapper img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Exibe o gráfico inteiro sem cortes */
+            object-fit: contain;
             opacity: 0.9;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -298,17 +298,17 @@
         <!-- Lado Direito: Grid de Cartões -->
         <div class="chart-grid-container">
             
-            <!-- FIGURA 1: LAB (Biplot do PCA) -->
+            <!-- FIGURA 1: LAB (SHAP Values - VIX Tupiniquim II) -->
             <a href="lab.html" class="showcase-card" title="Click to enter the Quantitative Lab">
                 <div>
                     <span class="card-tag tag-lab">LAB</span>
                     <div class="card-image-wrapper">
-                        <img src="biplot_pca_en.png" alt="PCA Biplot - Latent Factor Stress">
+                        <img src="shap_impact_xgboost_en.png" alt="SHAP Values - Non-Linear Stress Modeling">
                     </div>
                 </div>
                 <div>
                     <h3 class="card-label-title">Quantitative Lab</h3>
-                    <p class="card-label-sub">PCA Biplot & Regularized Models</p>
+                    <p class="card-label-sub">XGBoost & Explainable Machine Learning (SHAP)</p>
                 </div>
             </a>
 
