@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG18FWLDX6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YG18FWLDX6');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Itaiguara Bezerra</title>
@@ -35,6 +45,12 @@
 
         .navbar-resume a:hover, .navbar-resume a.active {
             color: #c5a880;
+        }
+
+        .navbar-resume span {
+            color: #ffffff;
+            opacity: 0.3;
+            margin-left: 25px;
         }
 
         .resume-container {
@@ -174,12 +190,30 @@
         .lista-bullets li {
             margin-bottom: 6px;
         }
+
+        @media (max-width: 768px) {
+            .grid-curriculo {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .navbar-resume {
+                text-align: center;
+                padding-right: 0;
+            }
+            .navbar-resume a {
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 0.8rem;
+            }
+            .navbar-resume span {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar-resume">
-        <!-- MENU TOTALMENTE INTEGRADO COM A ESTRUTURA DO SEU INDEX.HTML -->
         <a href="index.html">HOME</a> <span>|</span>
         <a href="about.html">ABOUT ME</a> <span>|</span>
         <a href="lab.html">LAB</a> <span>|</span>
@@ -198,7 +232,7 @@
         <div class="cabecalho-curriculo">
             <div>
                 <h1 style="margin: 0; font-size: 2.3rem; font-weight: 700; color: #e0e0e0; letter-spacing: -0.5px;">Itaiguara Bezerra</h1>
-                <p style="margin: 6px 0 0 0; font-size: 1.1rem; color: #c5a880; font-weight: 500;">Senior Economist & Data Economist</p>
+                <p style="margin: 6px 0 0 0; font-size: 1.1rem; color: #c5a880; font-weight: 500;">Senior Economist &amp; Data Economist</p>
             </div>
             <div class="download-group">
                 <a href="curriculo_estendido_pt.pdf" target="_blank" class="botao-pdf">Download Portuguese Version</a>
@@ -219,7 +253,7 @@
                     </div>
                     <p class="empresa-nome">Getulio Vargas Foundation (FGV) in partnership with SEBRAE</p>
                     <p class="texto-descricao">
-                        Conducted periodic business cycle and economic analyses focusing on the performance of Micro and Small Enterprises (MSEs) in Brazil. Directly responsible for technical data prep, statistical time series handling, and the monthly release of the **Micro and Small Enterprises Confidence Index (IC-MPE)** analytical report, delivering quantitative diagnostics to guide strategic and institutional policy choices.
+                        Conducted periodic business cycle and economic analyses focusing on the performance of Micro and Small Enterprises (MSEs) in Brazil. Directly responsible for technical data prep, statistical time series handling, and the monthly release of the <strong>Micro and Small Enterprises Confidence Index (IC-MPE)</strong> analytical report, delivering quantitative diagnostics to guide strategic and institutional policy choices.
                     </p>
                 </div>
 
@@ -247,13 +281,13 @@
 
                 <div class="item-experiencia">
                     <div class="linha-topo-item">
-                        <h3 class="cargo-titulo">Higher Education Lecturer & Evaluator</h3>
+                        <h3 class="cargo-titulo">Higher Education Lecturer &amp; Evaluator</h3>
                         <span class="tag-data">2017 - 2022</span>
                     </div>
                     <p class="empresa-nome">Universidade Grande Rio (UNIGRANRIO)</p>
                     <ul class="lista-bullets">
                         <li><strong>Lecturer:</strong> Structured curriculum architecture and conducted courses in "Quantitative Methods Applied to Management" for the Lato Sensu Postgraduate tracks.</li>
-                        <li><strong>Evaluator:</strong> Monitored, audited, and evaluated Distance Learning (EaD) graduate-level materials across Advanced Financial Mathematics, Capital Structure, Long-Term Financing Systems, and Mergers & Acquisitions (M&A).</li>
+                        <li><strong>Evaluator:</strong> Monitored, audited, and evaluated Distance Learning (EaD) graduate-level materials across Advanced Financial Mathematics, Capital Structure, Long-Term Financing Systems, and Mergers &amp; Acquisitions (M&amp;A).</li>
                     </ul>
                 </div>
 
@@ -273,7 +307,7 @@
 
                 <div class="item-experiencia">
                     <div class="linha-topo-item">
-                        <h3 class="cargo-titulo">Logistics & Project Evaluation Analyst</h3>
+                        <h3 class="cargo-titulo">Logistics &amp; Project Evaluation Analyst</h3>
                         <span class="tag-data">2007 - 2009</span>
                     </div>
                     <p class="empresa-nome">GEFCO Logística do Brasil (PSA Peugeot Citroën Group)</p>
@@ -296,7 +330,7 @@
 
                 <div class="item-experiencia">
                     <div class="linha-topo-item">
-                        <h3 class="cargo-titulo">Financial & Sectorial Indices Analyst</h3>
+                        <h3 class="cargo-titulo">Financial &amp; Sectorial Indices Analyst</h3>
                         <span class="tag-data">2002 - 2004</span>
                     </div>
                     <p class="empresa-nome">Getulio Vargas Foundation (FGV)</p>
@@ -361,7 +395,7 @@
 
                 <div class="item-experiencia">
                     <div class="linha-topo-item">
-                        <h3 class="cargo-titulo">International Conferences & Congresses</h3>
+                        <h3 class="cargo-titulo">International Conferences &amp; Congresses</h3>
                         <span class="tag-data">CIRET</span>
                     </div>
                     <p class="texto-descricao">
@@ -369,11 +403,11 @@
                     </p>
                 </div>
 
-                <h2 class="titulo-bloco" style="margin-top: 50px;">Technical Core & Data Portfolio</h2>
+                <h2 class="titulo-bloco" style="margin-top: 50px;">Technical Core &amp; Data Portfolio</h2>
                 
                 <div style="font-size: 0.92rem; color: #b3b3b3;">
                     <p style="margin: 0 0 20px 0; text-align: justify;">
-                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Advanced Statistical Programming & ML (Python & R):</strong> 
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Advanced Statistical Programming &amp; ML (Python &amp; R):</strong> 
                         End-to-end processing pipelines built inside VS Code using Python and R ecosystems. Advanced domain in structural Feature Engineering for non-stationary macroeconomic indicators. Specialized deployment of non-linear Machine Learning tree architectures (XGBoost) for structural business cycle classifications and credit risk defaults, completely integrated with SHAP Values for strict economic interpretability and boundary mapping.
                     </p>
                     
@@ -383,7 +417,7 @@
                     </p>
                     
                     <p style="margin: 0 0 20px 0; text-align: justify;">
-                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Statistical Software & Analytics Environment:</strong> 
+                        <strong style="color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.95rem;">Statistical Software &amp; Analytics Environment:</strong> 
                         Advanced deployment in Python, R, STATA, EViews, and OxMetrics (STAMP module). Deep operational framework in complex spreadsheet architecture (Excel) applied to institutional reporting.
                     </p>
 
