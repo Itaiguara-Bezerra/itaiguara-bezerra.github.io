@@ -125,6 +125,86 @@
             font-style: normal;
         }
 
+        /* --- FEATURED EXERCISE BANNER --- */
+        .featured-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 168, 128, 0.35);
+            border-radius: 6px;
+            padding: 28px;
+            margin: 30px 0 50px 0;
+            transition: all 0.3s ease;
+        }
+
+        .featured-card:hover {
+            border-color: #c5a880;
+            background: rgba(197, 168, 128, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .featured-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .featured-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.2px;
+        }
+
+        .featured-desc {
+            font-size: 1rem;
+            color: #b3b3b3;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .meta-pill {
+            font-family: monospace;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: #c5a880;
+            padding: 4px 10px;
+            border-radius: 3px;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+        }
+
+        .btn-lab-action {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 18px;
+            background: linear-gradient(180deg, #16222f 0%, #0d1620 100%);
+            border: 1px solid #c5a880;
+            color: #c5a880;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lab-action:hover {
+            background: #c5a880;
+            color: #0b1219;
+            box-shadow: 0px 4px 15px rgba(197, 168, 128, 0.3);
+        }
+
         /* --- METHODOLOGICAL TREE --- */
         .tree-container {
             background: rgba(255, 255, 255, 0.02);
@@ -250,12 +330,6 @@
             background: rgba(197, 168, 128, 0.2);
             color: #c5a880;
             border: 1px solid rgba(197, 168, 128, 0.4);
-        }
-
-        .status-progress {
-            background: rgba(255, 255, 255, 0.05);
-            color: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* --- METHODOLOGICAL COMPARISON TABLE --- */
@@ -431,8 +505,41 @@
             learning methods.
         </p>
 
-        <!-- VIX FRAMEWORK -->
+        <!-- ========================================== -->
+        <!-- EXERCISE 4: FEATURED RECENT WORK (TOP)    -->
+        <!-- ========================================== -->
         <h2 class="section-subtitle" style="margin-top: 40px;">
+            Exercise 4: Micro &amp; Small Enterprises Default Risk Modeling (SCR/BACEN)
+        </h2>
+
+        <div class="featured-card">
+            <div class="featured-header">
+                <h3 class="featured-title">Nonlinear Credit Default Classification &amp; Tree SHAP Interpretability</h3>
+                <span class="node-status status-published">Latest Release</span>
+            </div>
+            <p class="featured-desc">
+                An applied machine learning architecture designed to predict credit default among Brazilian Micro and Small Enterprises (MSEs) using granular data from the Central Bank of Brazil (SCR/BACEN). The pipeline employs strict Out-of-Time (OOT) validation across credit cycle transitions, dual ROC/Precision-Recall performance metrics, and Tree SHAP decomposition to ensure the predictive algorithm aligns with macroprudential credit principles.
+            </p>
+            <div class="featured-meta">
+                <span class="meta-pill">SCR / BACEN Microdata</span>
+                <span class="meta-pill">Out-of-Time (OOT) Split</span>
+                <span class="meta-pill">Random Forest &amp; XGBoost</span>
+                <span class="meta-pill">Tree SHAP Global &amp; Local</span>
+            </div>
+            <a href="https://github.com/Itaiguara-Bezerra/MSE_Default_Risk_Brazil" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-lab-action">
+                Open Repository &amp; Research Assets &rarr;
+            </a>
+        </div>
+
+        <hr>
+
+        <!-- ========================================== -->
+        <!-- VIX FRAMEWORK (PRECEDING EXERCISES)        -->
+        <!-- ========================================== -->
+        <h2 class="section-subtitle">
             VIX Tupiniquim: A Modern Quantitative Framework for Measuring Brazilian Financial Stress
         </h2>
 
@@ -636,28 +743,29 @@
 
         <hr>
 
-        <!-- LAB REPOSITORIES -->
+        <!-- ========================================== -->
+        <!-- LAB REPOSITORIES (CHRONOLOGICAL ORDER)     -->
+        <!-- ========================================== -->
         <h2 class="section-subtitle" style="font-size: 1rem;">
-            Sandbox Repositories &amp; Exercises
+            Sandbox Repositories &amp; Exercises (Chronological)
         </h2>
 
         <div class="grid-placeholder">
 
-            <!-- VIX I -->
-            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_I"
+            <!-- 1. EXERCISE 4 (NEWEST) -->
+            <a href="https://github.com/Itaiguara-Bezerra/MSE_Default_Risk_Brazil"
                target="_blank"
                rel="noopener noreferrer"
-               class="card-lab active-card">
+               class="card-lab active-card"
+               style="border-color: rgba(197, 168, 128, 0.4);">
 
                 <div>
-                    <div class="card-title">
-                        VIX Tupiniquim I
+                    <div class="card-title" style="color: #c5a880;">
+                        MSE Default Risk Brazil
                     </div>
 
                     <div class="card-desc">
-                        PCA and Linear Regularization
-                        (LASSO, Ridge, and Elastic Net)
-                        for Brazilian Financial Stress.
+                        Micro and Small Enterprises credit risk modeling using SCR/BACEN microdata, Out-of-Time (OOT) temporal validation, and Tree SHAP interpretability.
                     </div>
                 </div>
 
@@ -668,31 +776,7 @@
 
             </a>
 
-            <!-- VIX II -->
-            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_II"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="card-lab active-card">
-
-                <div>
-                    <div class="card-title">
-                        VIX Tupiniquim II
-                    </div>
-
-                    <div class="card-desc">
-                        Non-Linear Stress Modeling via
-                        XGBoost &amp; SHAP Values.
-                    </div>
-                </div>
-
-                <div class="node-status status-published"
-                     style="align-self: flex-start;">
-                    Open Repository &rarr;
-                </div>
-
-            </a>
-
-            <!-- VIX III -->
+            <!-- 2. VIX III -->
             <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_III"
                target="_blank"
                rel="noopener noreferrer"
@@ -716,19 +800,45 @@
 
             </a>
 
-            <!-- EXERCISE 4: MSE DEFAULT RISK BRAZIL -->
-            <a href="https://github.com/Itaiguara-Bezerra/MSE_Default_Risk_Brazil"
+            <!-- 3. VIX II -->
+            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_II"
                target="_blank"
                rel="noopener noreferrer"
                class="card-lab active-card">
 
                 <div>
                     <div class="card-title">
-                        MSE Default Risk Brazil
+                        VIX Tupiniquim II
                     </div>
 
                     <div class="card-desc">
-                        Micro and Small Enterprises credit risk modeling using SCR/BACEN data, Out-of-Time validation, and Tree SHAP interpretability.
+                        Non-Linear Stress Modeling via
+                        XGBoost &amp; SHAP Values.
+                    </div>
+                </div>
+
+                <div class="node-status status-published"
+                     style="align-self: flex-start;">
+                    Open Repository &rarr;
+                </div>
+
+            </a>
+
+            <!-- 4. VIX I (OLDEST) -->
+            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_I"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="card-lab active-card">
+
+                <div>
+                    <div class="card-title">
+                        VIX Tupiniquim I
+                    </div>
+
+                    <div class="card-desc">
+                        PCA and Linear Regularization
+                        (LASSO, Ridge, and Elastic Net)
+                        for Brazilian Financial Stress.
                     </div>
                 </div>
 
