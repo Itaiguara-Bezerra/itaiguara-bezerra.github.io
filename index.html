@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG18FWLDX6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YG18FWLDX6');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itaiguara Bezerra | Senior Economist & Data Economist</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b1219;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Container Principal */
+        .hero-viewport {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 6% 40px 6%;
+            gap: 40px;
+        }
+
+        /* Camada Escurecida de Fundo */
+        .hero-viewport::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 18, 25, 0.65);
+            z-index: 1;
+        }
+
+        /* Menu Superior */
+        nav {
+            position: absolute;
+            top: 30px;
+            right: 6%;
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.7;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: #c5a880;
+        }
+
+        nav span {
+            color: #ffffff;
+            opacity: 0.3;
+        }
+
+        /* Lado Esquerdo - Texto */
+        .content-block {
+            max-width: 45%;
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        .content-block h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .content-block h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #c5a880;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 35px;
+        }
+
+        /* Botões */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-portfolio, .btn-lab {
+            display: inline-block;
+            padding: 13px 24px;
+            background: linear-gradient(180deg, #16222f 0%, #0d1620 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-portfolio {
+            border: 2px solid #4a6175;
+        }
+
+        .btn-portfolio:hover {
+            border-color: #c5a880;
+            box-shadow: 0px 4px 20px rgba(197, 168, 128, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-lab {
+            border: 2px solid #c5a880;
+            color: #c5a880;
+        }
+
+        .btn-lab:hover {
+            background: linear-gradient(180deg, #1d2b3a 0%, #131f2c 100%);
+            box-shadow: 0px 4px 20px rgba(197, 168, 128, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Lado Direito - Grid dos Cards */
+        .chart-grid-container {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            z-index: 2;
+        }
+
+        .showcase-card {
+            background-color: rgba(11, 15, 18, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 16px;
+            text-decoration: none;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .showcase-card:hover {
+            border-color: #c5a880;
+            transform: translateY(-3px);
+            box-shadow: 0px 12px 35px rgba(197, 168, 128, 0.25);
+            background-color: rgba(15, 21, 26, 0.95);
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .tag-lab {
+            color: #c5a880;
+            background: rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        .tag-projects {
+            color: #8faec9;
+            background: rgba(74, 97, 117, 0.25);
+            border: 1px solid rgba(143, 174, 201, 0.4);
+        }
+
+        /* Proporção 16:9 Padronizada */
+        .card-image-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            background: #06090c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 4px;
+        }
+
+        .card-image-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .showcase-card:hover .card-image-wrapper img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .card-label-title {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-align: center;
+        }
+
+        .card-label-sub {
+            color: #c5a880;
+            font-size: 0.75rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-viewport {
+                flex-direction: column;
+                justify-content: center;
+                gap: 40px;
+                padding-top: 100px;
+            }
+            .content-block {
+                max-width: 100%;
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .chart-grid-container {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .chart-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-viewport">
+        <!-- Menu de Navegação Superior -->
+        <nav>
+            <a href="index.html" class="active">HOME</a> <span>|</span>
+            <a href="about.html">ABOUT ME</a> <span>|</span>
+            <a href="lab.html">LAB</a> <span>|</span>
+            <a href="projects.html">PROJECTS</a> <span>|</span>
+            <a href="resume.html">RESUME</a> <span>|</span>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <!-- Lado Esquerdo: Identidade Institucional -->
+        <div class="content-block">
+            <h1>Itaiguara Bezerra</h1>
+            <h2>Senior Economist | Data Economist</h2>
+            <div class="btn-group">
+                <a href="projects.html" class="btn-portfolio">[View Projects]</a>
+                <a href="lab.html" class="btn-lab">[Enter the Lab]</a>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Grid de Cartões -->
+        <div class="chart-grid-container">
+            
+            <!-- FIGURA 1: LAB (Atualizada para o Exercício 4) -->
+            <a href="lab.html" class="showcase-card" title="Click to enter the Quantitative Lab">
+                <div>
+                    <span class="card-tag tag-lab">LAB</span>
+                    <div class="card-image-wrapper">
+                        <img src="regional_sectoral_map_mse.png" alt="Brazilian MSE Default Risk - Regional & Sectoral Heatmap">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="card-label-title">Quantitative Lab</h3>
+                    <p class="card-label-sub">MSE Credit Risk, OOT Validation & Tree SHAP</p>
+                </div>
+            </a>
+
+            <!-- FIGURA 2: PROJECTS -->
+            <a href="projects.html" class="showcase-card" title="Click to view Applied Projects">
+                <div>
+                    <span class="card-tag tag-projects">PROJECTS</span>
+                    <div class="card-image-wrapper">
+                        <img src="xgboost_semaforo_economico_en.png" alt="Applied Macroeconomic Projects">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="card-label-title">Applied Projects</h3>
+                    <p class="card-label-sub">Macroeconomic Decision Frameworks</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
