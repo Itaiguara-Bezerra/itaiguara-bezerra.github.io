@@ -1,0 +1,462 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{
+	top=1.2cm,
+	bottom=1.3cm,
+	left=1.5cm,
+	right=1.5cm
+}
+
+\usepackage{xcolor}
+% Paleta Institucional
+\definecolor{bisnavy}{RGB}{14, 30, 54}
+\definecolor{bisblue}{RGB}{28, 64, 105}
+\definecolor{bistile}{RGB}{60, 100, 145}
+\definecolor{bisterra}{RGB}{192, 75, 55}
+\definecolor{bisgold}{RGB}{220, 150, 60}
+\definecolor{bislight}{RGB}{240, 244, 250}
+\definecolor{secondary}{RGB}{90, 100, 110}
+\definecolor{rulecolor}{RGB}{215, 220, 225}
+\definecolor{boxbg}{RGB}{248, 250, 252}
+
+% Cores do Quote e Resumo Executivo
+\definecolor{corFundoQuote}{RGB}{244, 247, 253}
+\definecolor{corBarraQuote}{RGB}{28, 64, 105}
+\definecolor{corAzulExecutivo}{RGB}{248, 251, 255}
+\definecolor{corBordaExecutivo}{RGB}{215, 228, 245}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,calc}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{caption}
+\captionsetup{
+	position=top,
+	skip=3pt,
+	labelfont={bf,footnotesize,color=bisnavy},
+	textfont={footnotesize,color=bisnavy}
+}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=bisblue,
+	urlcolor=bisblue,
+	citecolor=bisblue
+}
+
+\tcbset{
+	quotebox/.style={
+		enhanced,
+		colback=corFundoQuote,
+		boxrule=0pt,
+		frame hidden,
+		borderline west={2.5pt}{0pt}{corBarraQuote},
+		arc=0pt,
+		left=10pt,
+		right=10pt,
+		top=6pt,
+		bottom=6pt
+	},
+	resumobox/.style={
+		colback=corAzulExecutivo,
+		colframe=corBordaExecutivo,
+		boxrule=0.5pt,
+		arc=2.5pt,
+		left=8pt,
+		right=8pt,
+		top=5pt,
+		bottom=5pt
+	},
+	notabox/.style={
+		colback=white,
+		colframe=rulecolor,
+		boxrule=0.6pt,
+		arc=2pt,
+		left=8pt,
+		right=8pt,
+		top=5pt,
+		bottom=5pt
+	},
+	downloadbox/.style={
+		colback=white,
+		colframe=bistile!60,
+		boxrule=0.6pt,
+		arc=2pt,
+		left=8pt,
+		right=8pt,
+		top=5pt,
+		bottom=5pt
+	}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+
+% Comando único de cabeçalho
+\newcommand{\cabecalhopadrao}{
+	\noindent
+	{\large \bfseries \color{bisnavy} Monitor da Inflação Alimentar}
+	\vspace{3pt}
+	\noindent
+	{\footnotesize \color{secondary} \VAR{autor_nome} \quad\textbar\quad \VAR{autor_titulo} \quad\textbar\quad {\bfseries\color{bisblue}\VAR{edicao_texto}}}
+	\vspace{1.5pt}
+	\noindent
+	{\footnotesize \color{secondary} \texttt{\VAR{autor_website}}}
+	\vspace{0.10cm}
+	{\color{rulecolor}\hrule height 0.6pt}
+	\vspace{0.20cm}
+}
+
+\begin{document}
+	
+	% ==============================================================================
+	% CAPA EDITORIAL (NÃO CONTADA NA NUMERAÇÃO DE PÁGINAS)
+	% ==============================================================================
+	\begin{titlepage}
+		\newgeometry{top=0cm, bottom=0cm, left=0cm, right=0cm}
+		\noindent
+		\begin{tikzpicture}[x=1cm, y=1cm]
+			\path (0,0) rectangle (21, 29.7);
+			
+			\fill[bisnavy] (0, 29.7) -- (21, 29.7) -- (21, 16.5) -- (0, 12.0) -- cycle;
+			\fill[bisblue] (0, 12.0) -- (21, 16.5) -- (21, 14.8) -- (0, 10.3) -- cycle;
+			\fill[bistile] (0, 10.3) -- (21, 14.8) -- (21, 13.8) -- (0, 9.3) -- cycle;
+			\fill[bisterra] (0, 9.3) -- (21, 13.8) -- (21, 12.8) -- (0, 8.3) -- cycle;
+			\fill[bisgold] (0, 8.3) -- (21, 12.8) -- (21, 12.3) -- (0, 7.8) -- cycle;
+			
+			\fill[bislight] (0, 2.2) -- (21, 2.2) -- (21, 11.0) -- (0, 6.5) -- cycle;
+			\fill[bistile, opacity=0.15] (5, 2.2) -- (21, 9.5) -- (21, 2.2) -- cycle;
+			\fill[bisnavy, opacity=0.08] (0, 2.2) -- (14, 2.2) -- (0, 7.0) -- cycle;
+			
+			\fill[bisnavy] (0, 0) rectangle (21, 2.2);
+			\fill[bisterra] (0, 2.2) rectangle (21, 2.4);
+			
+			\draw[white, opacity=0.3, line width=1.2pt] (1.8, 17.0) -- (19.2, 21.0);
+			\draw[bisgold, opacity=0.6, line width=0.8pt] (1.8, 16.5) -- (19.2, 20.5);
+			
+			\node[anchor=north west, text=white, opacity=0.80, font=\scriptsize\sffamily\bfseries] 
+			at (1.8, 28.0) {RELATÓRIO DE MONITORAMENTO MACROECONÔMICO};
+			
+			\node[anchor=north west, text=white, font=\huge\sffamily\bfseries, text width=17.5cm, align=left] 
+			at (1.8, 26.5) {Monitor da Inflação Alimentar};
+			
+			\node[anchor=north west, text=bisgold, font=\Large\sffamily\bfseries] 
+			at (1.8, 23.2) {\VAR{edicao_texto}};
+			
+			\node[anchor=north, text=white, font=\Large\sffamily\itshape, text width=17.5cm, align=center] 
+			at (10.5, 21.4) {\VAR{chamada_capa}};
+			
+			\node[anchor=south east, align=right] at (19.2, 3.2) {
+				\color{bisnavy}\bfseries\large \VAR{autor_nome}\\[3pt]
+				\color{secondary}\footnotesize \VAR{autor_titulo}\\[2pt]
+				\color{secondary}\footnotesize \VAR{autor_afiliacao}\\[2pt]
+				\color{bistile}\footnotesize \texttt{\VAR{autor_contato}}\\[2pt]
+				\color{bisnavy}\footnotesize \texttt{\VAR{autor_website}}\\[5pt]
+				\color{black}\scriptsize\bfseries \VAR{autor_divulgacao}
+			};
+			
+			\node[anchor=west, text=white, opacity=0.85, font=\scriptsize\sffamily] 
+			at (1.8, 1.1) {Pesquisa Econômica Independente \quad\textbar\quad Metodologia POF / IBGE};
+			
+			\node[anchor=east, text=white, font=\scriptsize\sffamily\bfseries] 
+			at (19.2, 1.1) {Série Histórica e Monitoramento Mensal};
+		\end{tikzpicture}
+	\end{titlepage}
+	\restoregeometry
+	
+	% ==============================================================================
+	% PÁGINA 1: INDICADORES, PANORAMA, FIGURA 1 E TABELA 1
+	% ==============================================================================
+	\cabecalhopadrao
+	
+	\noindent
+	\begin{minipage}[t]{0.24\textwidth}
+		\centering
+		{\footnotesize \bfseries IPCA GERAL}\\[1.5pt]
+		{\large \bfseries \color{\VAR{cor_ipca_geral}} \VAR{ipca_geral_mes}\%}\\[1pt]
+		{\scriptsize Variação mensal}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.24\textwidth}
+		\centering
+		{\footnotesize \bfseries IPCA -- DOMICÍLIO}\\[1.5pt]
+		{\large \bfseries \color{\VAR{cor_ipca_dom}} \VAR{ipca_domicilio_mes}\%}\\[1pt]
+		{\scriptsize Variação mensal}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.24\textwidth}
+		\centering
+		{\footnotesize \bfseries RENDA MUITO BAIXA}\\[1.5pt]
+		{\large \bfseries \color{\VAR{cor_estrato_baixo}} \VAR{estrato_baixo_mes}\%}\\[1pt]
+		{\scriptsize Menor rendimento}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.24\textwidth}
+		\centering
+		{\footnotesize \bfseries RENDA ALTA}\\[1.5pt]
+		{\large \bfseries \color{\VAR{cor_estrato_alto}} \VAR{estrato_alto_mes}\%}\\[1pt]
+		{\scriptsize Maior rendimento}
+	\end{minipage}
+	
+	\vspace{0.15cm}
+	{\color{rulecolor}\hrule height 0.6pt}
+	\vspace{0.15cm}
+	
+	\begin{tcolorbox}[quotebox]
+		\small\itshape
+		``\VAR{quote_economista}''
+		\vspace{3pt}
+		\par\raggedleft\normalfont\footnotesize --- Itaiguara Bezerra, \VAR{autor_titulo}
+	\end{tcolorbox}
+	
+	\vspace{0.10cm}
+	
+	\begin{tcolorbox}[resumobox]
+		\noindent {\bfseries\normalsize \color{bisnavy} Resumo Executivo:}
+		\begin{itemize}[leftmargin=12pt, itemsep=2pt, topsep=2pt, parsep=0pt]
+			\BLOCK{ for ponto in pontos_chave }
+			\item {\small \VAR{ponto}}
+			\BLOCK{ endfor }
+		\end{itemize}
+	\end{tcolorbox}
+	
+	\vspace{0.12cm}
+	
+	\noindent {\large \bfseries \color{bisnavy} Panorama do Mês e Trajetória Recente}
+	
+	\vspace{0.06cm}
+	
+	{\small \VAR{texto_analitico_p1}}
+	
+	\vspace{0.06cm}
+	
+	\begin{figure}[h!]
+		\centering
+		\caption{Trajetória semestral e variação no mês: Estratos de Renda vs. IPCA Alimentação no Domicílio.}
+		\vspace{2pt}
+		\includegraphics[width=\textwidth]{painel_1x2_trajetoria_barras.pdf}
+		\vspace{2pt}
+		\noindent\raggedright
+		{\tiny \color{secondary} Fonte: Elaboração do autor com base em dados da POF 2017--2018 e Tabela 7060 (SIDRA/IBGE).}
+	\end{figure}
+	
+	\vspace{0.15cm}
+	
+	\begin{table}[h!]
+		\centering
+		\caption{Variação Mensal e Acumulada (\%)}
+		\vspace{1pt}
+		\footnotesize
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l c c c c c @{}}
+			\toprule
+			& \multicolumn{3}{c}{\textbf{Variação Mensal}} & \multicolumn{2}{c}{\textbf{Variação Acumulada}} \\
+			\cmidrule(lr){2-4} \cmidrule(lr){5-6}
+			\textbf{Estrato / Indicador} & \textbf{\VAR{col_mes_m2}} & \textbf{\VAR{col_mes_m1}} & \textbf{\VAR{col_mes_atual}} & \textbf{12 Meses} & \textbf{No Ano} \\
+			\midrule
+			IPCA Geral & \VAR{tab1_ipca.m2} & \VAR{tab1_ipca.m1} & \VAR{tab1_ipca.atual} & \VAR{tab1_ipca.doze} & \VAR{tab1_ipca.ano} \\
+			IPCA - Alim. Domicílio & \VAR{tab1_dom.m2} & \VAR{tab1_dom.m1} & \VAR{tab1_dom.atual} & \VAR{tab1_dom.doze} & \VAR{tab1_dom.ano} \\
+			\midrule
+			\BLOCK{ for row in tabela_variacoes_ipea }
+			\VAR{row.estrato} & \VAR{row.m2} & \VAR{row.m1} & \VAR{row.atual} & \VAR{row.doze} & \VAR{row.ano} \\
+			\BLOCK{ endfor }
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	
+	\clearpage
+	
+	% ==============================================================================
+	% PÁGINA 2: TENDÊNCIA E DECOMPOSIÇÃO
+	% ==============================================================================
+	\cabecalhopadrao
+	
+	\noindent {\large \bfseries \color{bisnavy} Análise de Tendência e Suavização}
+	
+	\vspace{0.06cm}
+	
+	{\small \VAR{texto_analise_ewma}}
+	
+	\vspace{0.25cm}
+	
+	\begin{table}[h!]
+		\centering
+		\caption{Tendências da Inflação Alimentar (\% ao ano)}
+		\vspace{1pt}
+		\footnotesize
+		\begin{minipage}{0.80\textwidth}
+			\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l c c @{}}
+				\toprule
+				& \multicolumn{2}{c}{\textbf{Taxas Anualizadas (\% ao ano)}} \\
+				\cmidrule(lr){2-3}
+				\textbf{Faixa de Renda} & \begin{tabular}{@{}c@{}}\textbf{\color{bisnavy}Tendência} \\ \textbf{\color{bisnavy}(com base no resultado do mês)}\end{tabular} & \textbf{Suavização} \\
+				\midrule
+				\BLOCK{ for row in tabela2_tendencias }
+				\VAR{row.estrato} & \VAR{row.mes_anualizado} & \VAR{row.ewma} \\
+				\BLOCK{ endfor }
+				\bottomrule
+			\end{tabular*}
+			\vspace{4pt}\par
+			\noindent
+			{\tiny \color{secondary} \textbf{Nota Metodológica:} O método de suavização utilizado é a Média Móvel Exponencialmente Ponderada (EWMA). Para maiores detalhes sobre a modelagem, a Nota Técnica encontra-se disponível para \textit{download} na seção de \textbf{Repositório Público} (pág. 4).\par}
+		\end{minipage}
+	\end{table}
+	
+	\vspace{0.4cm}
+	
+	\noindent {\large \bfseries \color{bisnavy} O que Explicou a Variação Mensal}
+	
+	\vspace{0.06cm}
+	
+	{\small \VAR{texto_analitico_p2}}
+	
+	\vspace{0.08cm}
+	
+	\begin{figure}[h!]
+		\centering
+		\caption{Contribuições dos grupos de produtos para a inflação mensal, por estrato de renda (p.p.)}
+		\vspace{2pt}
+		\includegraphics[width=\textwidth]{painel_contribuicao_6faixas.pdf}\par
+		\vspace{4pt}
+		\begin{flushleft}
+			{\tiny \color{secondary} Fonte: Elaboração do autor com base em dados da POF 2017--2018 e Tabela 7060 (SIDRA/IBGE).\par}
+		\end{flushleft}
+	\end{figure}
+	
+	\clearpage
+	
+	% ==============================================================================
+	% PÁGINA 3: TABELA 3 (SUBITENS)
+	% ==============================================================================
+	\cabecalhopadrao
+	
+	\noindent {\large \bfseries \color{bisnavy} Principais Contribuições Marginais de Subitens Alimentares por Estrato}
+	\vspace{0.02cm}
+	{\color{rulecolor}\hrule height 0.6pt}
+	\vspace{0.06cm}
+	
+	{\small A tabela abaixo discrimina os cinco subitens que exerceram as maiores contribuições marginais positivas e negativas na formação da taxa mensal de cada estrato em \VAR{mes_ano_referencia}.}
+	
+	\vspace{0.05cm}
+	
+	\begin{table}[h!]
+		\centering
+		\caption{Principais Contribuições Marginais de Subitens Alimentares por Estrato (\VAR{mes_ano_referencia})}
+		\vspace{2pt}
+		\footnotesize
+		\renewcommand{\arraystretch}{1.15} % Aumenta o espaçamento vertical entre as linhas
+		\setlength{\tabcolsep}{7pt} % Aumenta o respiro horizontal das colunas
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} c l c c | l c c @{}}
+			\toprule
+			& \multicolumn{3}{c}{\textbf{Maiores Altas (+) por Contribuição}} & \multicolumn{3}{c}{\textbf{Maiores Quedas (--) por Contribuição}} \\
+			\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+			\textbf{\#} & \textbf{Alimento} & \textbf{Var. (\%)} & \textbf{Contrib. (p.p.)} & \textbf{Alimento} & \textbf{Var. (\%)} & \textbf{Contrib. (p.p.)} \\
+			\midrule
+			\BLOCK{ for bloco in tabela_completa_subitens }
+			\multicolumn{7}{l}{\textbf{\color{bisnavy}\VAR{bloco.faixa_nome}}} \\
+			\midrule
+			\BLOCK{ for r in bloco.linhas }
+			\VAR{r.pos} & \VAR{r.item_pos} & \VAR{r.var_pos} & \VAR{r.contrib_pos} & \VAR{r.item_neg} & \VAR{r.var_neg} & \VAR{r.contrib_neg} \\
+			\BLOCK{ endfor }
+			\midrule
+			\BLOCK{ endfor }
+			\bottomrule
+		\end{tabular*}
+		\vspace{3pt}
+		\noindent\raggedright
+		{\tiny \color{secondary} Fonte: Elaboração do autor com base na POF 2017--2018 e Tabela 7060 (SIDRA/IBGE). Nota: A ordenação é dada estritamente pela contribuição em pontos percentuais. A recorrência dos mesmos itens entre estratos decorre de a variação de preço ser uniforme nacionalmente.}
+	\end{table}
+	
+	\clearpage
+	
+	% ==============================================================================
+	% PÁGINA 4: FAIXAS DE RENDA E REPOSITÓRIO PÚBLICO
+	% ==============================================================================
+	\cabecalhopadrao
+	
+	\noindent {\large \bfseries \color{bisnavy} Classificação Socioeconômica e Repositório Público}
+	\vspace{0.02cm}
+	{\color{rulecolor}\hrule height 0.6pt}
+	\vspace{0.08cm}
+	
+	\noindent {\normalsize \bfseries \color{bisnavy} Estratificação Socioeconômica e Ponderação de Consumo}
+	\vspace{0.06cm}
+	
+	{\small A classificação dos estratos adota a padronização oficial do Indicador Ipea de Inflação por Faixa de Renda, calibrada pela inflação acumulada e ancorada na POF 2017--2018.}
+	
+	\vspace{0.04cm}
+	
+	\begin{table}[h!]
+		\centering
+		\caption{Faixas de Renda Mensal Domiciliar}
+		\vspace{2pt}
+		\footnotesize
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l c c @{}}
+			\toprule
+			\textbf{Faixa de Renda} & \textbf{Renda Domiciliar (\VAR{faixas_renda_base_ano})} & \textbf{Renda Domiciliar (\VAR{faixas_renda_atual_ano})} \\
+			\midrule
+			\BLOCK{ for faixa in tabela_faixas_renda }
+			\VAR{faixa.nome} & \VAR{faixa.renda_base} & \VAR{faixa.renda_atual} \\
+			\BLOCK{ endfor }
+			\bottomrule
+		\end{tabular*}
+		\vspace{2pt}
+		\noindent\raggedright
+		{\tiny \color{secondary} Fonte: Elaboração do autor com base na Carta de Conjuntura, Dimac/Ipea.}
+	\end{table}
+	
+	\vspace*{\fill}
+	
+	\noindent {\normalsize \bfseries \color{bisnavy} Acesso Direto à Base de Dados e Edições Anteriores}
+	\vspace{0.06cm}
+	
+	{\small Para garantir transparência analítica e permitir auditoria independente, a série histórica completa cobrindo de Janeiro de 2020 a \VAR{mes_ano_referencia} --- acompanhada das matrizes de ponderação da POF 2017--2018, dos microdados dos subitens e da série de números-índice encadeados com base fixada em Janeiro de 2020 ($= 100{,}00$) --- encontra-se disponibilizada em repositório público:}
+	
+	\vspace{0.06cm}
+	
+	\begin{tcolorbox}[downloadbox]
+		\centering
+		{\bfseries \color{bisnavy} Repositório Institucional de Dados e Relatórios}\\[2pt]
+		{\footnotesize \color{secondary} Série Histórica (Jan/2020 a \VAR{mes_ano_referencia})}\\[5pt]
+		
+		{\small
+			\textbf{Edição Anterior (\VAR{mes_anterior_completo}) (PDF):} \href{\VAR{link_edicao_anterior}}{download direto}\\[4pt]
+			\textbf{Nota Técnica Metodológica (PDF):} \href{\VAR{link_drive_nota}}{download direto}\\[4pt]
+			\textbf{Série de variações mensais (\%):} \href{\VAR{link_drive_xlsx_var}}{.xlsx} \quad\textbar\quad \href{\VAR{link_drive_csv_var}}{.csv} \quad\textbar\quad \href{\VAR{link_drive_parquet_var}}{.parquet}\\[3pt]
+			\textbf{Série de índices encadeados (Base 100 = Jan/2020):} \href{\VAR{link_drive_xlsx_ind}}{.xlsx} \quad\textbar\quad \href{\VAR{link_drive_csv_ind}}{.csv} \quad\textbar\quad \href{\VAR{link_drive_parquet_ind}}{.parquet}
+		}
+	\end{tcolorbox}
+	
+	\vspace{0.10cm}
+	
+	\begin{tcolorbox}[notabox]
+		{\bfseries \color{bisnavy} Nota de Isenção de Responsabilidade:}\\[2pt]
+		{\footnotesize \color{secondary} As opiniões, análises e estimativas expressas neste relatório são de estrita e exclusiva responsabilidade do autor, não refletindo necessariamente a visão ou posicionamento oficial de quaisquer instituições com as quais mantenha vínculo profissional.}
+	\end{tcolorbox}
+	
+	\vspace{0.08cm}
+	
+	\begin{tcolorbox}[notabox]
+		{\bfseries \color{bisnavy} Como citar este documento:}\\[2pt]
+		{\footnotesize \color{secondary} BEZERRA, Itaiguara de Oliveira. \textbf{Monitor da Inflação Alimentar: por Estrato de Renda}. Relatório de Acompanhamento Macroeconômico, Rio de Janeiro, \VAR{mes_ano_referencia}. É permitida a reprodução total ou parcial das informações, tabelas e metodologias aqui contidas, desde que expressamente citada a fonte e atribuída a autoria. Reproduções para fins comerciais são proibidas.}
+	\end{tcolorbox}
+	
+	\vspace{0.10cm}
+	{\color{rulecolor}\hrule height 0.5pt}
+	\vspace{2pt}
+	{\tiny \color{secondary} Relatório técnico independente. Fontes dos dados brutos: IBGE (POF / SIDRA).}
+	
+\end{document}
