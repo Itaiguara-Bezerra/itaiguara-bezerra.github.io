@@ -168,9 +168,9 @@
 
         .featured-meta {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .meta-pill {
@@ -181,6 +181,12 @@
             padding: 4px 10px;
             border-radius: 3px;
             border: 1px solid rgba(197, 168, 128, 0.25);
+        }
+
+        .btn-action-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .btn-lab-action {
@@ -203,6 +209,18 @@
             background: #c5a880;
             color: #0b1219;
             box-shadow: 0px 4px 15px rgba(197, 168, 128, 0.3);
+        }
+
+        .btn-lab-secondary {
+            border-color: #4a6175;
+            color: #ffffff;
+        }
+
+        .btn-lab-secondary:hover {
+            background: #4a6175;
+            color: #ffffff;
+            border-color: #8faec9;
+            box-shadow: 0px 4px 15px rgba(74, 97, 117, 0.35);
         }
 
         /* --- METHODOLOGICAL TREE --- */
@@ -506,32 +524,46 @@
         </p>
 
         <!-- ========================================== -->
-        <!-- EXERCISE 4: FEATURED RECENT WORK (TOP)    -->
+        <!-- EXERCISE 5: FEATURED RECENT WORK (TOP)    -->
         <!-- ========================================== -->
         <h2 class="section-subtitle" style="margin-top: 40px;">
-            Exercise 4: Micro &amp; Small Enterprises Default Risk Modeling (SCR/BACEN)
+            Exercise 5: US Subprime Crisis &amp; Macrofinancial Stress (FRED / CFPB)
         </h2>
 
         <div class="featured-card">
             <div class="featured-header">
-                <h3 class="featured-title">Nonlinear Credit Default Classification &amp; Tree SHAP Interpretability</h3>
+                <h3 class="featured-title">From Subprime to the Fall of Lehman Brothers: Delinquency &amp; Financial Stress in the US</h3>
                 <span class="node-status status-published">Latest Release</span>
             </div>
             <p class="featured-desc">
-                An applied machine learning architecture designed to predict credit default among Brazilian Micro and Small Enterprises (MSEs) using granular data from the Central Bank of Brazil (SCR/BACEN). The pipeline employs strict Out-of-Time (OOT) validation across credit cycle transitions, dual ROC/Precision-Recall performance metrics, and Tree SHAP decomposition to ensure the predictive algorithm aligns with macroprudential credit principles.
+                An empirical investigation of credit delinquency contagion and interbank stress during the 2007–2009 US financial crisis using datasets from the Federal Reserve Board (FRED) and the Consumer Financial Protection Bureau (NMDB/CFPB). The framework bridges structural time-series econometrics (Diebold-Yilmaz Spillover, ARDL-ECM, Local Projections, PELT changepoints, and 48-month Rolling-Window VAR) with exploratory non-linear machine learning (K-Means, XGBoost, and Tree SHAP) to map asymmetric transmission across mortgage, consumer, and credit card markets.
             </p>
             <div class="featured-meta">
-                <span class="meta-pill">SCR / BACEN Microdata</span>
-                <span class="meta-pill">Out-of-Time (OOT) Split</span>
-                <span class="meta-pill">Random Forest &amp; XGBoost</span>
-                <span class="meta-pill">Tree SHAP Global &amp; Local</span>
+                <span class="meta-pill">FRED &amp; CFPB (NMDB)</span>
+                <span class="meta-pill">Spillover FEVD &amp; Local Projections</span>
+                <span class="meta-pill">PELT &amp; Rolling-Window VAR</span>
+                <span class="meta-pill">K-Means, XGBoost &amp; SHAP</span>
             </div>
-            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/MSE_Default_Risk_Brazil" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn-lab-action">
-                Open Repository &amp; Research Assets &rarr;
-            </a>
+            <div class="btn-action-group">
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/Subprime_Crisis_Dynamics_US"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-lab-action">
+                    Open Repository &amp; Scripts &rarr;
+                </a>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/blob/main/Subprime_Crisis_Dynamics_US/macrofinancial_dynamics_2008_crisis_us.pdf?raw=true"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-lab-action btn-lab-secondary">
+                    Download Paper (EN) &darr;
+                </a>
+                <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/blob/main/Subprime_Crisis_Dynamics_US/dinamica_macrofinanceira_crise_2008_eua.pdf?raw=true"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-lab-action btn-lab-secondary">
+                    Download Paper (PT) &darr;
+                </a>
+            </div>
         </div>
 
         <hr>
@@ -752,8 +784,8 @@
 
         <div class="grid-placeholder">
 
-            <!-- 1. EXERCISE 4 (NEWEST) -->
-            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/MSE_Default_Risk_Brazil"
+            <!-- 1. EXERCISE 5 (NEWEST) -->
+            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/Subprime_Crisis_Dynamics_US"
                target="_blank"
                rel="noopener noreferrer"
                class="card-lab active-card"
@@ -761,6 +793,29 @@
 
                 <div>
                     <div class="card-title" style="color: #c5a880;">
+                        Subprime Crisis Dynamics US
+                    </div>
+
+                    <div class="card-desc">
+                        US delinquency contagion and interbank stress (2007–2009) via FRED &amp; CFPB data, Spillover FEVD, Rolling-Window VAR, and XGBoost/SHAP.
+                    </div>
+                </div>
+
+                <div class="node-status status-published"
+                     style="align-self: flex-start;">
+                    Open Repository &rarr;
+                </div>
+
+            </a>
+
+            <!-- 2. EXERCISE 4 -->
+            <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/MSE_Default_Risk_Brazil"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="card-lab active-card">
+
+                <div>
+                    <div class="card-title">
                         MSE Default Risk Brazil
                     </div>
 
@@ -776,7 +831,7 @@
 
             </a>
 
-            <!-- 2. VIX III -->
+            <!-- 3. VIX III -->
             <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_III"
                target="_blank"
                rel="noopener noreferrer"
@@ -800,7 +855,7 @@
 
             </a>
 
-            <!-- 3. VIX II -->
+            <!-- 4. VIX II -->
             <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_II"
                target="_blank"
                rel="noopener noreferrer"
@@ -824,7 +879,7 @@
 
             </a>
 
-            <!-- 4. VIX I (OLDEST) -->
+            <!-- 5. VIX I (OLDEST) -->
             <a href="https://github.com/Itaiguara-Bezerra/Data-Economics-Projects/tree/main/VIX_Tupiniquim_I"
                target="_blank"
                rel="noopener noreferrer"
